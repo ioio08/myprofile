@@ -236,7 +236,7 @@ h1 {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     Profile  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-.profile__container {
+.profile-container {
   margin-bottom: 5em;
   display: flex;
   justify-content: space-evenly;
@@ -246,7 +246,7 @@ h1 {
     align-items: center;
   }
 
-  &-text {
+  &__profile-list {
     width: 48%;
 
     @include mq(tab) {
@@ -336,19 +336,19 @@ h1 {
     }
   }
 
-  &-images {
+  &__profile-images {
     width: 45%;
     display: flex;
     flex-direction: column;
 
-    .pi1>img,
-    .pi2>img {
+    &--image1>img,
+    &--image2>img {
       margin-bottom: 2em;
       width: 100%;
       height: auto;
     }
 
-    .pi1 {
+    &--image1 {
       @include mq(tab) {
         margin-bottom: 3em;
       }
@@ -360,7 +360,7 @@ h1 {
       }
     }
 
-    .pi2 {
+    &--image2 {
       @include mq(tab) {
         display: none;
       }
@@ -372,20 +372,20 @@ h1 {
 //     History  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-.history {
+.history-container {
   margin-bottom: 5em;
 
   h3 {
     padding-left: 0.8em;
   }
 
-  &-subtitle {
+  &__history-subtitle {
     padding-bottom: 0.2em;
     margin-bottom: 1em;
     border-bottom: 1px solid $base-color;
   }
 
-  &-list {
+  &__history-list {
     display: flex;
     justify-content: space-between;
     width: 98%;
@@ -397,7 +397,7 @@ h1 {
       padding: 1em;
     }
 
-    &__status {
+    &--status {
       width: 30%;
 
       @include mq(tab) {
@@ -443,7 +443,7 @@ h1 {
       }
     }
 
-    &__text {
+    &--text {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -482,7 +482,7 @@ h1 {
       }
     }
 
-    &__image {
+    &--image {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -511,7 +511,7 @@ h1 {
 //     Programing  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-.programing__container {
+.programing-container {
   padding: 1.2em 2em;
   margin-bottom: 5em;
 
@@ -520,7 +520,7 @@ h1 {
     flex-direction: column;
   }
 
-  &--skill {
+  &__programing-skill {
     margin-bottom: 5em;
 
     h4 {
@@ -572,49 +572,49 @@ h1 {
     }
   }
 
-  &--item {
+  &__programing-text {
     margin-bottom: 4em;
 
     @include mq() {
       margin-bottom: 2em;
     }
-  }
 
-  &--purpose,
-  &--target {
-    max-width: 64.8em;
-    width: 90%;
-    margin: 0 auto 5em;
-    padding: 0 2em 2em;
+    &--purpose,
+    &--target {
+      max-width: 64.8em;
+      width: 90%;
+      margin: 0 auto 5em;
+      padding: 0 2em 2em;
 
-    border: 2px solid $base-color;
-    border-top: none;
-    border-radius: 1.6em;
-
-    @include mq() {
-      margin-bottom: 3em;
-    }
-
-    h4 {
-      margin-bottom: 1em;
-    }
-
-    p {
-      line-height: 2.5em;
-
-      @include mq(pc) {
-        font-size: 1.8em;
-        line-height: 1.6em;
-      }
+      border: 2px solid $base-color;
+      border-top: none;
+      border-radius: 1.6em;
 
       @include mq() {
-        font-size: 1.6em;
-        line-height: 1.5em;
+        margin-bottom: 3em;
+      }
+
+      h4 {
+        margin-bottom: 1em;
+      }
+
+      p {
+        line-height: 2.5em;
+
+        @include mq(pc) {
+          font-size: 1.8em;
+          line-height: 1.6em;
+        }
+
+        @include mq() {
+          font-size: 1.6em;
+          line-height: 1.5em;
+        }
       }
     }
   }
 
-  &-images {
+  &__programing-images {
     display: flex;
     justify-content: center;
 
@@ -635,7 +635,7 @@ h1 {
 //     Product  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-.product__container {
+.product-container {
   padding: 1.2em 2em;
   margin-bottom: 2em;
   display: flex;
@@ -649,142 +649,148 @@ h1 {
     padding-top: 0;
     margin-bottom: 0;
   }
-}
 
-.product__contents-left {
-  width: 48%;
 
-  @include mq(pc) {
-    max-width: 80em;
-    width: 100%;
-    margin: 0 auto 5em;
-  }
-
-  @include mq() {
-    margin-bottom: 2em;
-  }
-
-  h2 {
-    margin-bottom: 1em;
-  }
-
-  &--image {
-    width: 100%;
-    height: 80em;
-    background: url(images/product_images/product_1.jpeg);
-    background-size: cover;
+  &__product-left {
+    width: 48%;
 
     @include mq(pc) {
-      width: 85%;
-      height: 28em;
-      margin: 0 auto;
+      max-width: 80em;
+      width: 100%;
+      margin: 0 auto 5em;
     }
 
     @include mq() {
-      width: 70%;
-      height: 15em;
-    }
-
-  }
-
-  p {
-    padding-top: 1em;
-    text-align: end;
-
-    &::before {
-      content: "“ ";
-    }
-
-    &::after {
-      content: " “";
-    }
-
-    a {
-      color: $sub-color;
-      background-color: $base-color;
-
-      &:hover {
-        color: $base-color;
-        background-color: $sub-color;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-.product__contents-right {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @include mq(pc) {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  li {
-
-    dl {
-      display: flex;
-      border: 2px solid $base-color;
-      border-radius: 8px;
-      padding: 1.4em;
       margin-bottom: 2em;
+    }
 
-      dd {
+    h2 {
+      margin-bottom: 1em;
+    }
+
+    &--image {
+      width: 100%;
+      height: 80em;
+      background: url(images/product_images/product_1.jpeg);
+      background-size: cover;
+
+      @include mq(pc) {
+        width: 85%;
+        height: 28em;
+        margin: 0 auto;
+        background: url(images/product_images/product_2.jpeg) no-repeat;
+        background-size: 100%;
+      }
+
+      @include mq(tab) {}
+
+      @include mq() {
         width: 70%;
-        line-height: 1.3em;
+        height: 15em;
+      }
 
-        @include mq(pc) {
-          width: 80%;
-          margin: 0 auto;
-        }
+    }
 
-        &.flex-item {
-          margin-bottom: 1.3em;
+    p {
+      padding-top: 1em;
+      text-align: end;
+
+      &::before {
+        content: "“ ";
+      }
+
+      &::after {
+        content: " “";
+      }
+
+      a {
+        color: $sub-color;
+        background-color: $base-color;
+
+        &:hover {
+          color: $base-color;
+          background-color: $sub-color;
+          cursor: pointer;
         }
       }
     }
   }
 
-  &--item {
+
+  &__product-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     @include mq(pc) {
-      display: flex;
-      justify-content: space-evenly;
-      width: 100%;
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+    }
 
-      li {
-        max-width: 33em;
-        width: 48%;
+    li {
+      dl {
+        display: flex;
+        border: 2px solid $base-color;
+        border-radius: 8px;
+        padding: 1.4em;
+        margin-bottom: 2em;
 
-        dl {
-          dt {
-            width: 55%;
+        dd {
+          width: 70%;
+          line-height: 1.3em;
+
+          @include mq(pc) {
+            width: 80%;
+            margin: 0 auto;
           }
 
-          dd {
-            width: 45%;
 
-            @include mq(pc) {
-              line-height: 1em;
-              width: auto;
+        }
+      }
+    }
+
+    &--item {
+      @include mq(pc) {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        li {
+          max-width: 33em;
+          width: 48%;
+
+          dl {
+            dt {
+              width: 55%;
+            }
+
+            dd {
+              width: 45%;
+
+              &.flex-item {
+                margin-bottom: 1.3em;
+              }
+
+              @include mq(pc) {
+                line-height: 1em;
+                width: auto;
+              }
             }
           }
         }
       }
-    }
 
-    @include mq(tab) {
-      flex-direction: column;
-      align-items: center;
+      @include mq(tab) {
+        flex-direction: column;
+        align-items: center;
 
-      li {
-        min-width: 22.5em;
+        li {
+          min-width: 22.5em;
+        }
       }
     }
-
   }
 }
 
@@ -810,110 +816,112 @@ h1 {
       margin: 3em auto 2em;
       width: 70%;
     }
+  }
 
-    li {
-      display: block;
-      margin-bottom: 1.4em;
-      min-height: 3.5em;
+  li {
+    display: block;
+    margin-bottom: 1.4em;
+    min-height: 3.5em;
 
-      @include mq(tab) {
-        text-align: center;
-        margin: 0;
-      }
-
-      .field-style {
-        box-sizing: border-box;
-        padding: 0.8em;
-
-        @include mq(tab) {
-          padding: 0.6em;
-        }
-      }
-
-      .field-split {
-        width: 49%;
-
-        @include mq(tab) {
-          width: 80%;
-        }
-      }
-
-      .field-full {
-        width: 100%;
-
-        @include mq(tab) {
-          width: 80%;
-        }
-      }
-
-      input {
-        @include mq(tab) {
-          margin-bottom: 0.7em;
-        }
-      }
-
-      input.align-left {
-        float: left;
-
-        @include mq(tab) {
-          float: none;
-        }
-      }
-
-      input.align-right {
-        float: right;
-
-        @include mq(tab) {
-          float: none;
-        }
-      }
-
-      textarea {
-        width: 100%;
-        height: 10em;
-
-        @include mq(tab) {
-          width: 80%;
-          height: 6em;
-          margin-bottom: 0.8em;
-        }
-      }
-
-      input[type="submit"],
-      input[type="reset"] {
-        background-color: $sub-color;
-        display: inline-block;
-        cursor: pointer;
-        color: $base-color;
-        padding: 0.8em 1.8em;
-        text-decoration: none;
-
-        @include mq(tab) {
-          padding: 0.5em 1.4em;
-        }
-
-        @include mq() {
-          padding: 0.3em 1em;
-        }
-      }
-    }
-
-    .submit {
-      display: flex;
-
-      @include mq(tab) {
-        margin-left: 10%;
-      }
-
-      li {
-        display: inline-block;
-      }
-
-      input[type="reset"] {
-        margin-left: 2em;
-      }
+    @include mq(tab) {
+      text-align: center;
+      margin: 0;
     }
   }
+
+  &-style {
+    box-sizing: border-box;
+    padding: 0.8em;
+
+    @include mq(tab) {
+      padding: 0.6em;
+    }
+  }
+
+  &-split {
+    width: 49%;
+
+    @include mq(tab) {
+      width: 80%;
+    }
+  }
+
+  &-subject{
+    width: 100%;
+
+    @include mq(tab) {
+      width: 80%;
+    }
+  }
+
+  input {
+    @include mq(tab) {
+      margin-bottom: 0.7em;
+    }
+  }
+
+  &-left {
+    float: left;
+
+    @include mq(tab) {
+      float: none;
+    }
+  }
+
+  &-right {
+    float: right;
+
+    @include mq(tab) {
+      float: none;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 10em;
+
+    @include mq(tab) {
+      width: 80%;
+      height: 6em;
+      margin-bottom: 0.8em;
+    }
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    background-color: $sub-color;
+    display: inline-block;
+    cursor: pointer;
+    color: $base-color;
+    padding: 0.8em 1.8em;
+    text-decoration: none;
+
+    @include mq(tab) {
+      padding: 0.5em 1.4em;
+    }
+
+    @include mq() {
+      padding: 0.3em 1em;
+    }
+  }
+
+
+  &-submit {
+    display: flex;
+
+    @include mq(tab) {
+      margin-left: 10%;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    input[type="reset"] {
+      margin-left: 2em;
+    }
+  }
+
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
