@@ -3,22 +3,25 @@
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 @import "color.scss";
+@import "responsive.scss";
+
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     全体設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
 * {
   padding: 0;
   margin: 0;
 }
-
 
 html {
   font-size: 62.5%;
 }
 
 body {
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   height: auto;
 
   line-height: 1;
@@ -30,7 +33,6 @@ dt::after {
   content: "：";
 }
 
-
 a {
   text-decoration: none;
 }
@@ -40,31 +42,117 @@ li {
 }
 
 h1 {
-  font-size: 3.8em;
+  font-size: 4em;
+
+  @include mq(pc) {
+    font-size: 3.6em;
+  }
+
+  @include mq(tab) {
+    font-size: 3em;
+  }
+
+  @include mq() {
+    font-size: 2.4em;
+  }
+
 }
 
 h2 {
   font-size: 3.4em;
+
+  @include mq(pc) {
+    font-size: 3em;
+  }
+
+  @include mq(tab) {
+    font-size: 2.6em;
+  }
+
+  @include mq() {
+    font-size: 2.2em;
+  }
 }
 
 h3 {
   font-size: 3em;
+
+  @include mq(pc) {
+    font-size: 2.7em;
+  }
+
+  @include mq(tab) {
+    font-size: 2.4em;
+  }
+
+  @include mq() {
+    font-size: 2em;
+  }
 }
 
 h4 {
   font-size: 2.6em;
+
+  @include mq(pc) {
+    font-size: 2.4em;
+  }
+
+  @include mq(tab) {
+    font-size: 2.2em;
+  }
+
+  @include mq() {
+    font-size: 2em;
+  }
 }
 
 p {
-  font-size: 1.8em;
+  font-size: 2em;
+
+  @include mq(pc) {
+    font-size: 1.6em;
+  }
+
+  @include mq(tab) {
+    font-size: 1.4em;
+  }
+
+  @include mq() {
+    font-size: 1.2em;
+  }
 }
 
 dt {
   font-size: 2.6em;
+
+  @include mq(pc) {
+    font-size: 2.2em;
+  }
+
+  @include mq(tab) {
+    font-size: 1.8em;
+  }
+
+  @include mq() {
+    font-size: 1.6em;
+  }
+
 }
 
 dd {
-  font-size: 2em;
+  font-size: 2.4em;
+
+  @include mq(pc) {
+    font-size: 2em;
+  }
+
+  @include mq(tab) {
+    font-size: 1.8em;
+  }
+
+  @include mq() {
+    font-size: 1.4em;
+  }
 }
 
 h4::before {
@@ -72,28 +160,52 @@ h4::before {
   margin-right: 0.4em;
 }
 
+
+.pc {
+  @include mq(pc) {
+    display: none;
+  }
+}
+
+.tab {
+  @include mq() {
+    display: none;
+  }
+}
+
+.mb {
+  @include mq() {
+    display: none;
+  }
+
+}
+
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     wrapper  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 .wrapper {
-  width: 1024px;
+  width: 98%;
   padding-top: 1em;
   margin: 0 auto;
-
   color: $base-color;
   background-color: $sub-color;
 
+  @include mq(tab) {
+    width: 100%;
+  }
 }
 
 .title {
-  width: 97%;
+  width: 96%;
   padding: 1.5em 0 1em 2em;
   margin: 0 auto 2.5em;
-
   color: $sub-color;
   background-color: $base-color;
 
+  @include mq(tab) {
+    padding: 0.8em 0 0.8em 1em;
+  }
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -106,121 +218,155 @@ header {
   line-height: 12em;
   text-align: center;
 
-  h1 {
+  @include mq(tab) {
+    height: 8em;
+    line-height: 8em;
+    margin: 3em 0 0;
+  }
+}
 
-    &::before,
-    &::after {
-      content: " ー  ";
-    }
+h1 {
+
+  &::before,
+  &::after {
+    content: "  ー  ";
   }
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     Profile  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
-
 .profile__container {
-  padding: 1.2em 2em;
-
   margin-bottom: 5em;
   display: flex;
   justify-content: space-evenly;
 
-  .profile__text {
+  @include mq(tab) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  &-text {
     width: 48%;
 
+    @include mq(tab) {
+      width: 95%;
+      margin: 0 auto;
+    }
+
     dl {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 1em;
+      display: grid;
+      grid-template-columns: repeat(1, 35% 32.5% 32.5%);
+      grid-template-rows: repeat(10, 1fr);
+      row-gap: 3.5em;
+
+      @include mq(tab) {
+        grid-template-columns: repeat(1, 35% 35% 30%);
+        justify-content: center;
+      }
+
+      @include mq() {
+        min-width: 26.5em;
+        row-gap: 2em;
+        grid-template-columns: repeat(1, 35% 55%);
+      }
 
       dt {
-        width: 30%;
-        margin-bottom: 1em;
+        @include mq(pc) {
+          font-size: 2.4em;
+        }
+
+        @include mq(tab) {
+          justify-self: flex-end;
+        }
+
+        @include mq() {
+          font-size: 1.8em;
+        }
+
+        &.grid4 {
+          grid-row: 4 / 7;
+        }
+
+
+        &.grid8 {
+          grid-row: 7 / 11;
+        }
+
       }
 
       dd {
-        width: 70%;
-        font-weight: 500;
-
-      }
-
-      &.profile__text--grid {
-        display: grid;
-        grid-template:
-          "  a    a1  ... "1fr " ...   a2  ... "1fr " ...   a3  ... "1fr "  b    b1   b2 "1fr " ...   b3   b4 "1fr " ...   b5   b6 "1fr " ...  ...  etc "1fr / 30% 35% 35%;
-
-        dt,
-        dd {
-          width: 100%;
+        @include mq(pc) {
+          font-size: 2em;
         }
 
-        .grid-a {
-          grid-area: a;
+        @include mq(tab) {
+          padding-left: 15%;
         }
 
-        .grid-a1 {
-          grid-area: a1;
-          grid-column: 2 / span 2;
+        @include mq() {
+          font-size: 1.4em;
+          padding-left: 5%;
         }
 
-        .grid-a2 {
-          grid-area: a2;
-          grid-column: 2 / span 2;
+        &.grid1,
+        &.grid2,
+        &.grid3,
+        &.grid5,
+        &.grid6,
+        &.grid7 {
+          grid-column: 2 / 4;
+
+          @include mq() {
+            grid-column: 2 / 3;
+          }
         }
 
-        .grid-a3 {
-          grid-area: a3;
-          grid-column: 2 / span 2;
+        &.grid9 {
+          grid-column: 3 / 4;
+          grid-row: 10 / 11;
+
+          @include mq() {
+            grid-column: 2 / 3;
+          }
         }
 
-        .grid-b {
-          grid-area: b;
-        }
 
-        .grid-b1 {
-          grid-area: b1;
-        }
-
-        .grid-b2 {
-          grid-area: b2;
-        }
-
-        .grid-b3 {
-          grid-area: b3;
-        }
-
-        .grid-b4 {
-          grid-area: b4;
-        }
-
-        .grid-b5 {
-          grid-area: b5;
-        }
-
-        .grid-b6 {
-          grid-area: b6;
-        }
-
-        .grid-etc {
-          grid-area: etc;
-        }
       }
     }
   }
 
-  .profile__images {
+  &-images {
     width: 45%;
     display: flex;
     flex-direction: column;
 
-    img {
+    .pi1>img,
+    .pi2>img {
       margin-bottom: 2em;
+      width: 100%;
+      height: auto;
+    }
+
+    .pi1 {
+      @include mq(tab) {
+        margin-bottom: 3em;
+      }
+
+      img {
+        @include mq(tab) {
+          border-radius: 35%;
+        }
+      }
+    }
+
+    .pi2 {
+      @include mq(tab) {
+        display: none;
+      }
     }
   }
 }
-
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     History  設定
@@ -233,52 +379,132 @@ header {
     padding-left: 0.8em;
   }
 
-  .history-subtitle {
+  &-subtitle {
     padding-bottom: 0.2em;
     margin-bottom: 1em;
     border-bottom: 1px solid $base-color;
   }
 
-  .history-list {
-    width: 95%;
-    padding: 0.8em;
-    margin: 0 auto 3em;
-
+  &-list {
     display: flex;
     justify-content: space-between;
+    width: 98%;
+    padding: 1.5em;
+    margin: 0 auto 3em;
+
+    @include mq(tab) {
+      flex-direction: column;
+      padding: 1em;
+    }
+
+    &__status {
+      width: 30%;
+
+      @include mq(tab) {
+        width: 100%;
+        height: auto;
+        margin-bottom: 26em;
+      }
+
+      @include mq() {
+        margin-bottom: 23em;
+      }
+    }
 
     dl {
       margin-bottom: 0.5em;
+
+      @include mq(tab) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 12em;
+      }
 
       dt {
         padding-bottom: 0.2em;
         margin: 0 0 0.5em;
         display: inline-block;
         border-bottom: 1px solid $base-color;
+
+        @include mq(tab) {
+          width: 95%;
+          margin-bottom: 2%;
+        }
       }
 
       dd {
         margin-bottom: 1em;
+        line-height: 1.5em;
+
+        @include mq(pc) {
+          font-size: 1.7em;
+        }
       }
     }
 
-
-    .history-list__text {
+    &__text {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 33%;
 
-      .history-list__text-item {
+
+      @include mq(tab) {
+        width: 95%;
+        margin-bottom: 24em;
+      }
+
+      &.last-hlt {
+        @include mq(tab) {
+          margin-bottom: 12em;
+        }
+      }
+
+      &-item {
         margin-bottom: 2em;
 
         h4 {
           margin-bottom: 0.5em;
+
+          @include mq() {
+            margin-bottom: 0.8em;
+          }
+        }
+
+        p {
+          line-height: 1.5em;
+
+          @include mq(pc) {
+            font-size: 2em;
+          }
         }
       }
     }
+
+    &__image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 37%;
+
+      @include mq(tab) {
+        width: 100%;
+      }
+
+      img {
+        display: inline-block;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+
+        @include mq(tab) {
+          width: 50%;
+        }
+
+      }
+    }
   }
-
-
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -288,65 +514,120 @@ header {
 .programing__container {
   padding: 1.2em 2em;
   margin-bottom: 5em;
-  display: flex;
-  justify-content: space-evenly;
 
+  @include mq(tab) {
+    display: flex;
+    flex-direction: column;
+  }
 
-  .programing__skill {
-    width: 33%;
+  &--skill {
+    margin-bottom: 5em;
 
     h4 {
+      display: inline-block;
       margin-bottom: 1.4em;
     }
 
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+
+      @include mq(tab) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
     li {
-      margin-bottom: 1.6em;
+      max-width: 36.5em;
+      width: 45%;
+      border: 3px solid $base-color;
+      border-radius: 10px;
+      padding: 1em 1em 0 2em;
+
+      @include mq(tab) {
+        margin-bottom: 2em;
+        min-width: 25em;
+      }
+
+      &:last-child {
+        max-width: 30em;
+        margin-left: 4em;
+        width: 35%;
+
+        @include mq(tab) {
+          margin-left: 0;
+        }
+      }
     }
 
     dl {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
+      display: grid;
+      grid-template-columns: 45% 40%;
 
       dt,
       dd {
-        width: 48%;
-        margin-bottom: 1.4em;
+        margin-bottom: 1.5em;
       }
     }
   }
 
-  .programing__contents {
-    width: 60%;
+  &--item {
+    margin-bottom: 4em;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
+    @include mq() {
+      margin-bottom: 2em;
+    }
   }
 
-  .programing__contents--purpose,
-  .programing__contents--target {
-    margin-bottom: 1.2em;
+  &--purpose,
+  &--target {
+    max-width: 64.8em;
+    width: 90%;
+    margin: 0 auto 5em;
+    padding: 0 2em 2em;
 
-    display: flex;
-    justify-content: space-between;
+    border: 2px solid $base-color;
+    border-top: none;
+    border-radius: 1.6em;
+
+    @include mq() {
+      margin-bottom: 3em;
+    }
 
     h4 {
-      padding-top: 1.2em;
-      margin-bottom: 0.8em;
+      margin-bottom: 1em;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
+    p {
+      line-height: 2.5em;
+
+      @include mq(pc) {
+        font-size: 1.8em;
+        line-height: 1.6em;
+      }
+
+      @include mq() {
+        font-size: 1.6em;
+        line-height: 1.5em;
+      }
     }
   }
 
-  .programing__contents-text,
-  .programing__contents-images {
-    width: 45%;
+  &-images {
+    display: flex;
+    justify-content: center;
 
+    img {
+      max-width: 35em;
+      width: 40%;
+      height: auto;
+      border-radius: 6px;
+
+      &:first-child {
+        margin-right: 5em;
+      }
+    }
   }
 }
 
@@ -360,197 +641,297 @@ header {
   display: flex;
   justify-content: space-between;
 
-  .product__contents-left {
-    width: 48%;
-
-    h2 {
-      margin-bottom: 1em;
-    }
-
-    img {
-      width: 100%;
-      height: 60em;
-    }
-
-    p {
-      padding-top: 1em;
-      text-align: end;
-
-      &::before {
-        content: "“ ";
-      }
-
-      &::after {
-        content: " “";
-      }
-
-      a {
-        color: $sub-color;
-        background-color: $base-color;
-
-        &:hover {
-          color: $base-color;
-          background-color: $sub-color;
-          cursor: pointer;
-        }
-      }
-    }
+  @include mq(pc) {
+    display: block;
   }
 
-  .product__contents-right {
-    width: 48%;
+  @include mq() {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+}
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.product__contents-left {
+  width: 48%;
 
-    li {
-      border: 2px solid $base-color;
-      padding: 1.4em;
-      margin-bottom: 2em;
+  @include mq(pc) {
+    max-width: 80em;
+    width: 100%;
+    margin: 0 auto 5em;
+  }
 
-      dl {
-        display: flex;
+  @include mq() {
+    margin-bottom: 2em;
+  }
 
-        dd {
-          width: 70%;
+  h2 {
+    margin-bottom: 1em;
+  }
 
-          &.flex-item {
-            padding-top: 0.2em;
-            margin-bottom: 1.3em;
-          }
-        }
+  &--image {
+    width: 100%;
+    height: 80em;
+    background: url(images/product_images/product_1.jpeg);
+    background-size: cover;
+
+    @include mq(pc) {
+      width: 85%;
+      height: 28em;
+      margin: 0 auto;
+    }
+
+    @include mq() {
+      width: 70%;
+      height: 15em;
+    }
+
+  }
+
+  p {
+    padding-top: 1em;
+    text-align: end;
+
+    &::before {
+      content: "“ ";
+    }
+
+    &::after {
+      content: " “";
+    }
+
+    a {
+      color: $sub-color;
+      background-color: $base-color;
+
+      &:hover {
+        color: $base-color;
+        background-color: $sub-color;
+        cursor: pointer;
       }
     }
   }
 }
 
+.product__contents-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+  @include mq(pc) {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
 
+  li {
 
+    dl {
+      display: flex;
+      border: 2px solid $base-color;
+      border-radius: 8px;
+      padding: 1.4em;
+      margin-bottom: 2em;
+
+      dd {
+        width: 70%;
+        line-height: 1.3em;
+
+        @include mq(pc) {
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        &.flex-item {
+          margin-bottom: 1.3em;
+        }
+      }
+    }
+  }
+
+  &--item {
+    @include mq(pc) {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      li {
+        max-width: 33em;
+        width: 48%;
+
+        dl {
+          dt {
+            width: 55%;
+          }
+
+          dd {
+            width: 45%;
+
+            @include mq(pc) {
+              line-height: 1em;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+
+    @include mq(tab) {
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        min-width: 22.5em;
+      }
+    }
+
+  }
+}
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//        contact  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+.contact {
+  color: $base-color;
+  padding: 2em 0 1.5em;
+
+  form {
+    max-width: 70%;
+    background: $base-color;
+    padding: 3em 3em 2em;
+    margin: 5em auto 3em;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 8px;
+    border: 4px solid $sub-color;
+
+    @include mq(tab) {
+      padding: 2em 2em 1em;
+      margin: 3em auto 2em;
+      width: 70%;
+    }
+
+    li {
+      display: block;
+      margin-bottom: 1.4em;
+      min-height: 3.5em;
+
+      @include mq(tab) {
+        text-align: center;
+        margin: 0;
+      }
+
+      .field-style {
+        box-sizing: border-box;
+        padding: 0.8em;
+
+        @include mq(tab) {
+          padding: 0.6em;
+        }
+      }
+
+      .field-split {
+        width: 49%;
+
+        @include mq(tab) {
+          width: 80%;
+        }
+      }
+
+      .field-full {
+        width: 100%;
+
+        @include mq(tab) {
+          width: 80%;
+        }
+      }
+
+      input {
+        @include mq(tab) {
+          margin-bottom: 0.7em;
+        }
+      }
+
+      input.align-left {
+        float: left;
+
+        @include mq(tab) {
+          float: none;
+        }
+      }
+
+      input.align-right {
+        float: right;
+
+        @include mq(tab) {
+          float: none;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        height: 10em;
+
+        @include mq(tab) {
+          width: 80%;
+          height: 6em;
+          margin-bottom: 0.8em;
+        }
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        background-color: $sub-color;
+        display: inline-block;
+        cursor: pointer;
+        color: $base-color;
+        padding: 0.8em 1.8em;
+        text-decoration: none;
+
+        @include mq(tab) {
+          padding: 0.5em 1.4em;
+        }
+
+        @include mq() {
+          padding: 0.3em 1em;
+        }
+      }
+    }
+
+    .submit {
+      display: flex;
+
+      @include mq(tab) {
+        margin-left: 10%;
+      }
+
+      li {
+        display: inline-block;
+      }
+
+      input[type="reset"] {
+        margin-left: 2em;
+      }
+    }
+  }
+}
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     footer  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 footer {
-  color: $base-color;
-  background-color: $sub-color;
-  padding-top: 2em;
+  padding: 4em 0;
+  text-align: center;
+  margin-top: 2.4em;
+  font-size: 1em;
 
-  form {
-    width: 85%;
-    margin: 0 auto 2em;
-
-    ul {
-      height: 22em;
-      border: 1px dotted black;
-      padding: 4em 0.5em;
-      display: flex;
-      justify-content: space-evenly;
-
-
-      label {
-        font-size: 2.2em;
-        width: 20%;
-        display: inline-block;
-        text-align: right;
-
-        &::after {
-          content: "：";
-        }
-      }
-    }
-
-    .contact-left {
-      width: 40%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      input {
-        width: 50%;
-        height: 2em;
-        padding: 0.3em;
-        margin-left: 1em;
-
-      }
-    }
-
-    .contact-right {
-      width: 40%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      select {
-        width: 60%;
-        height: 2em;
-
-      }
-
-      .textarea {
-        display: flex;
-        margin-left: 0.5em;
-
-        textarea {
-          width: 80%;
-          height: 8em;
-
-          padding: 0.4em;
-        }
-      }
-
-      .btn {
-        margin-top: 0.5em;
-        display: flex;
-        justify-content: center;
-
-        button {
-          margin-left: 2em;
-          padding: 0.3em 1em;
-        }
-      }
-    }
+  @include mq(tab) {
+    padding: 2em 0;
+    margin-top: 2em;
   }
 
-  .footer__message {
-    width: 80%;
-    padding: 3em;
-    height: 30em;
-
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-
-    .footer__message-image {
-      width: 45%;
-
-      img {
-        width: 90%;
-        height: 25em;
-        padding-top: 2em;
-        padding-left: 2em;
-        display: inline-block;
-        border-radius: 4em;
-      }
-    }
-
-    .footer__message-text {
-      width: 45%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      p {
-        font-size: 3em;
-
-      }
-    }
+  h1 {
+    margin-bottom: 1em;
   }
 }
-
-
-// ＝＝＝＝＝＝contact  設定＝＝＝＝＝＝＝
