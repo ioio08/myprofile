@@ -309,25 +309,25 @@
       <form  name="contact" method="POST" data-netlify="true">
         <ul>
           <li>
-            <input type="text" class="contact-style contact-split contact-left" placeholder="Name :" />
-            <input type="email" class="contact-style contact-split contact-right" placeholder="Email :" />
+            <input type="text" class="contact-style contact-split contact-left"  name="name" placeholder="Name :" />
+            <input type="email" class="contact-style contact-split contact-right" name="email" placeholder="Email :" />
           </li>
           <li>
-            <input type="text" class="contact-style contact-split contact-left" placeholder="Phone :" />
-            <input type="url" class="contact-style contact-split contact-right" placeholder="Website :" />
+            <input type="text" class="contact-style contact-split contact-left" name="phone" placeholder="Phone :" />
+            <input type="url" class="contact-style contact-split contact-right" name="website" placeholder="Website :" />
           </li>
           <li>
-            <input type="text" class="contact-style contact-subject contact-none" placeholder="Subject :" />
+            <input type="text" class="contact-style contact-subject contact-none" name="subject" placeholder="Subject :" />
           </li>
           <li>
-            <textarea class="contact-style" placeholder="Message :"></textarea>
+            <textarea class="contact-style" name="message" laceholder="Message :"></textarea>
           </li>
           <div class="contact-submit">
             <li>
-              <input type="submit" value="Send" />
+              <input type="submit" name="submit" value="Send" />
             </li>
             <li>
-              <input type="reset" value="Reset" />
+              <input type="reset" name="reset" value="Reset" />
             </li>
           </div>
         </ul>
