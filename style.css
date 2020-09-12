@@ -188,6 +188,16 @@ h4::before {
   margin-right: 0.4em;
 }
 
+img {
+  border-radius: 2em;
+}
+
+input,
+textarea {
+  border-radius: 0.6em;
+  border: 1px solid black;
+}
+
 @media screen and (max-width: 1024px) {
   .pc {
     display: none;
@@ -208,15 +218,20 @@ h4::before {
 
 .wrapper {
   width: 98%;
-  padding-top: 1em;
+  padding-top: 2em;
   margin: 0 auto;
   color: rgba(137, 120, 69, 0.6);
   background-color: rgba(255, 255, 255, 0.699);
+  border-radius: 8px;
+  -webkit-box-shadow: 6px 6px 0 4px rgba(212, 202, 166, 0.911);
+          box-shadow: 6px 6px 0 4px rgba(212, 202, 166, 0.911);
 }
 
 @media screen and (max-width: 768px) {
   .wrapper {
     width: 100%;
+    -webkit-box-shadow: 0 2px 0 4px rgba(212, 202, 166, 0.747);
+            box-shadow: 0 2px 0 4px rgba(212, 202, 166, 0.747);
   }
 }
 
@@ -226,6 +241,7 @@ h4::before {
   margin: 0 auto 2.5em;
   color: rgba(255, 255, 255, 0.699);
   background-color: rgba(137, 120, 69, 0.6);
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -675,14 +691,15 @@ h1::before, h1::after {
 }
 
 .programing-container__programing-skill li:last-child {
-  max-width: 30em;
+  max-width: 36.5em;
   margin-left: 4em;
-  width: 35%;
+  width: 45%;
 }
 
 @media screen and (max-width: 768px) {
   .programing-container__programing-skill li:last-child {
     margin-left: 0;
+    min-width: 25em;
   }
 }
 
@@ -759,7 +776,6 @@ h1::before, h1::after {
   max-width: 35em;
   width: 40%;
   height: auto;
-  border-radius: 6px;
 }
 
 .programing-container__programing-images img:first-child {
@@ -817,6 +833,7 @@ h1::before, h1::after {
   height: 80em;
   background: url(images/product_images/product_1.jpeg);
   background-size: cover;
+  border-radius: 2em;
 }
 
 @media screen and (max-width: 1024px) {
@@ -892,6 +909,12 @@ h1::before, h1::after {
   margin-bottom: 2em;
 }
 
+@media screen and (max-width: 1024px) {
+  .product-container__product-right li dl {
+    margin-bottom: 4em;
+  }
+}
+
 .product-container__product-right li dl dd {
   width: 70%;
   line-height: 1.3em;
@@ -918,6 +941,15 @@ h1::before, h1::after {
     max-width: 33em;
     width: 48%;
   }
+}
+
+@media screen and (max-width: 1024px) and (max-width: 768px) {
+  .product-container__product-right--item li {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .product-container__product-right--item li dl dt {
     width: 55%;
   }
@@ -961,9 +993,7 @@ h1::before, h1::after {
   background: rgba(137, 120, 69, 0.6);
   padding: 3em 3em 2em;
   margin: 5em auto 3em;
-  -webkit-box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-          box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 8px;
+  border-radius: 1.4em;
   border: 4px solid rgba(255, 255, 255, 0.699);
 }
 
