@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      全体設定
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 * {
   padding: 0;
   margin: 0;
@@ -17,10 +20,6 @@ body {
   background-color: rgba(137, 120, 69, 0.6);
 }
 
-dt::after {
-  content: "：";
-}
-
 a {
   text-decoration: none;
 }
@@ -29,6 +28,7 @@ li {
   list-style: none;
 }
 
+/* font-size { h1, h2, h3, h4, p , dt, dd} ここから */
 h1 {
   font-size: 4em;
 }
@@ -41,13 +41,13 @@ h1 {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 3em;
+    font-size: 3.2em;
   }
 }
 
 @media screen and (max-width: 425px) {
   h1 {
-    font-size: 2.4em;
+    font-size: 2.8em;
   }
 }
 
@@ -123,29 +123,29 @@ p {
 
 @media screen and (max-width: 1024px) {
   p {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 }
 
 @media screen and (max-width: 768px) {
   p {
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
 }
 
 @media screen and (max-width: 425px) {
   p {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 }
 
 dt {
-  font-size: 2.6em;
+  font-size: 2.2em;
 }
 
 @media screen and (max-width: 1024px) {
   dt {
-    font-size: 2.2em;
+    font-size: 2em;
   }
 }
 
@@ -162,18 +162,18 @@ dt {
 }
 
 dd {
-  font-size: 2.4em;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 1024px) {
   dd {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
 
 @media screen and (max-width: 768px) {
   dd {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 }
 
@@ -183,18 +183,23 @@ dd {
   }
 }
 
+/* 擬似要素 */
 h4::before {
   content: "▼";
   margin-right: 0.4em;
 }
 
+dt::after {
+  content: "：";
+}
+
 img {
-  border-radius: 2em;
+  border-radius: 1em;
 }
 
 input,
 textarea {
-  border-radius: 0.6em;
+  border-radius: 0.5em;
   border: 1px solid black;
 }
 
@@ -204,7 +209,7 @@ textarea {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .tab {
     display: none;
   }
@@ -216,40 +221,44 @@ textarea {
   }
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     wrapper  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .wrapper {
   width: 98%;
-  padding-top: 2em;
+  padding: 4% 0% 0% 0%;
   margin: 0 auto;
   color: rgba(137, 120, 69, 0.6);
   background-color: rgba(255, 255, 255, 0.699);
-  border-radius: 8px;
-  -webkit-box-shadow: 6px 6px 0 4px rgba(212, 202, 166, 0.911);
-          box-shadow: 6px 6px 0 4px rgba(212, 202, 166, 0.911);
+  border-radius: 1em;
 }
 
 @media screen and (max-width: 768px) {
   .wrapper {
     width: 100%;
-    -webkit-box-shadow: 0 2px 0 4px rgba(212, 202, 166, 0.747);
-            box-shadow: 0 2px 0 4px rgba(212, 202, 166, 0.747);
   }
 }
 
 .title {
-  width: 96%;
-  padding: 1.5em 0 1em 2em;
-  margin: 0 auto 2.5em;
+  width: 94%;
+  padding: 2% 0% 2% 3%;
+  margin: 0 auto 5em;
   color: rgba(255, 255, 255, 0.699);
   background-color: rgba(137, 120, 69, 0.6);
-  border-radius: 10px;
+  border-radius: 1em;
 }
 
 @media screen and (max-width: 768px) {
   .title {
-    padding: 0.8em 0 0.8em 1em;
+    text-align: center;
+    width: 90%;
+    padding: 2% 0% 2% 0%;
   }
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     header  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 header {
   width: 100%;
   height: 12em;
@@ -266,17 +275,27 @@ header {
 }
 
 h1::before, h1::after {
-  content: "  ー  ";
+  content: "  -  ";
 }
 
+@media screen and (max-width: 425px) {
+  h1::before, h1::after {
+    display: none;
+  }
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     Profile  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .profile-container {
   margin-bottom: 5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* tab から縦方向・中央寄せ*/
 }
 
 @media screen and (max-width: 768px) {
@@ -297,7 +316,7 @@ h1::before, h1::after {
 
 @media screen and (max-width: 768px) {
   .profile-container__profile-list {
-    width: 95%;
+    width: 80%;
     margin: 0 auto;
   }
 }
@@ -331,21 +350,9 @@ h1::before, h1::after {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .profile-container__profile-list dl dt {
-    font-size: 2.4em;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .profile-container__profile-list dl dt {
     justify-self: flex-end;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .profile-container__profile-list dl dt {
-    font-size: 1.8em;
   }
 }
 
@@ -361,22 +368,15 @@ h1::before, h1::after {
   grid-row: 7 / 11;
 }
 
-@media screen and (max-width: 1024px) {
-  .profile-container__profile-list dl dd {
-    font-size: 2em;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .profile-container__profile-list dl dd {
-    padding-left: 15%;
+    padding: 0% 0% 0% 13%;
   }
 }
 
 @media screen and (max-width: 425px) {
   .profile-container__profile-list dl dd {
-    font-size: 1.4em;
-    padding-left: 5%;
+    padding: 0% 0% 0% 5%;
   }
 }
 
@@ -422,6 +422,12 @@ h1::before, h1::after {
           flex-direction: column;
 }
 
+@media screen and (max-width: 768px) {
+  .profile-container__profile-images {
+    width: 55%;
+  }
+}
+
 .profile-container__profile-images--image1 > img,
 .profile-container__profile-images--image2 > img {
   margin-bottom: 2em;
@@ -436,29 +442,32 @@ h1::before, h1::after {
 }
 
 @media screen and (max-width: 768px) {
-  .profile-container__profile-images--image1 img {
-    border-radius: 35%;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .profile-container__profile-images--image2 {
     display: none;
   }
 }
 
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     History  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .history-container {
   margin-bottom: 5em;
 }
 
-.history-container h3 {
-  padding-left: 0.8em;
+.history-container__history-subtitle {
+  padding: 0% 0% 1% 0%;
+  margin: 0 auto 3em;
+  border-bottom: 1px solid rgba(137, 120, 69, 0.6);
 }
 
-.history-container__history-subtitle {
-  padding-bottom: 0.2em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid rgba(137, 120, 69, 0.6);
+.history-container__history-subtitle h3 {
+  padding: 0% 0% 0% 2%;
+}
+
+@media screen and (max-width: 768px) {
+  .history-container__history-subtitle h3 {
+    padding: 0% 0% 0% 5%;
+  }
 }
 
 .history-container__history-list {
@@ -469,8 +478,7 @@ h1::before, h1::after {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 98%;
-  padding: 1.5em;
-  margin: 0 auto 3em;
+  margin: 0 auto 10em;
 }
 
 @media screen and (max-width: 768px) {
@@ -479,7 +487,6 @@ h1::before, h1::after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1em;
   }
 }
 
@@ -491,22 +498,23 @@ h1::before, h1::after {
   .history-container__history-list--status {
     width: 100%;
     height: auto;
-    margin-bottom: 26em;
+    margin-bottom: 28em;
   }
 }
 
 @media screen and (max-width: 425px) {
   .history-container__history-list--status {
-    margin-bottom: 23em;
+    margin-bottom: 20em;
   }
 }
 
 .history-container__history-list dl {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 @media screen and (max-width: 768px) {
   .history-container__history-list dl {
+    margin-bottom: 2em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -520,7 +528,6 @@ h1::before, h1::after {
 }
 
 .history-container__history-list dl dt {
-  padding-bottom: 0.2em;
   margin: 0 0 0.5em;
   display: inline-block;
   border-bottom: 1px solid rgba(137, 120, 69, 0.6);
@@ -529,18 +536,19 @@ h1::before, h1::after {
 @media screen and (max-width: 768px) {
   .history-container__history-list dl dt {
     width: 95%;
+    padding: 0% 0% 1% 6%;
     margin-bottom: 2%;
   }
 }
 
 .history-container__history-list dl dd {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   line-height: 1.5em;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .history-container__history-list dl dd {
-    font-size: 1.7em;
+    padding: 0% 0% 0% 9%;
   }
 }
 
@@ -561,13 +569,13 @@ h1::before, h1::after {
 @media screen and (max-width: 768px) {
   .history-container__history-list--text {
     width: 95%;
-    margin-bottom: 24em;
+    margin-bottom: 18em;
   }
 }
 
 @media screen and (max-width: 768px) {
   .history-container__history-list--text.last-hlt {
-    margin-bottom: 12em;
+    margin-bottom: 10em;
   }
 }
 
@@ -577,6 +585,12 @@ h1::before, h1::after {
 
 .history-container__history-list--text-item h4 {
   margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+  .history-container__history-list--text-item h4 {
+    padding: 0% 0% 2% 3%;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -589,9 +603,9 @@ h1::before, h1::after {
   line-height: 1.5em;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .history-container__history-list--text-item p {
-    font-size: 2em;
+    padding: 0% 0% 2% 9%;
   }
 }
 
@@ -611,7 +625,14 @@ h1::before, h1::after {
 
 @media screen and (max-width: 768px) {
   .history-container__history-list--image {
+    margin: 5em auto 0;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .history-container__history-list--image {
+    margin: 2em auto 0;
   }
 }
 
@@ -628,6 +649,9 @@ h1::before, h1::after {
   }
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     Programing  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .programing-container {
   padding: 1.2em 2em;
   margin-bottom: 5em;
@@ -751,14 +775,12 @@ h1::before, h1::after {
 
 @media screen and (max-width: 1024px) {
   .programing-container__programing-text--purpose p, .programing-container__programing-text--target p {
-    font-size: 1.8em;
     line-height: 1.6em;
   }
 }
 
 @media screen and (max-width: 425px) {
   .programing-container__programing-text--purpose p, .programing-container__programing-text--target p {
-    font-size: 1.6em;
     line-height: 1.5em;
   }
 }
@@ -782,6 +804,9 @@ h1::before, h1::after {
   margin-right: 5em;
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     Product  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .product-container {
   padding: 1.2em 2em;
   margin-bottom: 2em;
@@ -983,6 +1008,9 @@ h1::before, h1::after {
   }
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//        contact  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .contact {
   color: rgba(137, 120, 69, 0.6);
   padding: 2em 0 1.5em;
@@ -1133,11 +1161,13 @@ h1::before, h1::after {
   margin-left: 2em;
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     footer  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 footer {
   padding: 4em 0;
   text-align: center;
   margin-top: 2.4em;
-  font-size: 1em;
 }
 
 @media screen and (max-width: 768px) {

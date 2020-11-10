@@ -2,13 +2,15 @@
 //     import設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-@import "color.scss";
 @import "responsive.scss";
+@import "color.scss";
+@import "font-size.scss";
+@import "layout.scss";
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      全体設定
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-//     全体設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 * {
   padding: 0;
@@ -16,21 +18,16 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: $font-base;
 }
 
 body {
   max-width: 1200px;
   margin: 0 auto;
   height: auto;
-
   line-height: 1;
-  color: $sub-color;
-  background-color: $base-color;
-}
-
-dt::after {
-  content: "：";
+  color: $light-color;
+  background-color: $deep-color;
 }
 
 a {
@@ -40,136 +37,118 @@ a {
 li {
   list-style: none;
 }
+/* font-size { h1, h2, h3, h4, p , dt, dd} ここから */
 
 h1 {
-  font-size: 4em;
-
+  font-size: $h1-base;
   @include mq(pc) {
-    font-size: 3.6em;
+    font-size: $h1-pc;
   }
-
   @include mq(tab) {
-    font-size: 3em;
+    font-size: $h1-tab;
   }
-
   @include mq() {
-    font-size: 2.4em;
+    font-size: $h1-mb;
   }
-
 }
 
 h2 {
-  font-size: 3.4em;
-
+  font-size: $h2-base;
   @include mq(pc) {
-    font-size: 3em;
+    font-size: $h2-pc;
   }
-
   @include mq(tab) {
-    font-size: 2.6em;
+    font-size: $h2-tab;
   }
-
   @include mq() {
-    font-size: 2.2em;
+    font-size: $h2-mb;
   }
 }
 
 h3 {
-  font-size: 3em;
-
+  font-size: $h3-base;
   @include mq(pc) {
-    font-size: 2.7em;
+    font-size: $h3-pc;
   }
-
   @include mq(tab) {
-    font-size: 2.4em;
+    font-size: $h3-tab;
   }
-
   @include mq() {
-    font-size: 2em;
+    font-size: $h3-mb;
   }
 }
 
 h4 {
-  font-size: 2.6em;
-
+  font-size: $h4-base;
   @include mq(pc) {
-    font-size: 2.4em;
+    font-size: $h4-pc;
   }
-
   @include mq(tab) {
-    font-size: 2.2em;
+    font-size: $h4-tab;
   }
-
   @include mq() {
-    font-size: 2em;
+    font-size: $h4-mb;
   }
 }
 
 p {
-  font-size: 2em;
-
+  font-size: $p-base;
   @include mq(pc) {
-    font-size: 1.6em;
+    font-size: $p-pc;
   }
-
   @include mq(tab) {
-    font-size: 1.4em;
+    font-size: $p-tab;
   }
-
   @include mq() {
-    font-size: 1.2em;
+    font-size: $p-mb;
   }
 }
 
 dt {
-  font-size: 2.6em;
-
+  font-size: $dt-base;
   @include mq(pc) {
-    font-size: 2.2em;
+    font-size: $dt-pc;
   }
-
   @include mq(tab) {
-    font-size: 1.8em;
+    font-size: $dt-tab;
   }
-
   @include mq() {
-    font-size: 1.6em;
+    font-size: $dt-mb;
   }
-
 }
 
 dd {
-  font-size: 2.4em;
-
+  font-size: $dd-base;
   @include mq(pc) {
-    font-size: 2em;
+    font-size:$dd-pc;
   }
-
   @include mq(tab) {
-    font-size: 1.8em;
+    font-size:$dd-tab;
   }
-
   @include mq() {
-    font-size: 1.4em;
+    font-size:$dd-mb;
   }
 }
 
+/* 擬似要素 */
 h4::before {
   content: "▼";
   margin-right: 0.4em;
 }
 
+dt::after {
+  content: "：";
+}
+
 img {
-  border-radius: 2em;
+  border-radius: 1em;
 }
 
 input,
 textarea {
-  border-radius: 0.6em;
+  border-radius: 0.5em;
   border: 1px solid black;
 }
-
 
 .pc {
   @include mq(pc) {
@@ -178,7 +157,7 @@ textarea {
 }
 
 .tab {
-  @include mq() {
+  @include mq(tab) {
     display: none;
   }
 }
@@ -189,73 +168,71 @@ textarea {
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     wrapper  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 .wrapper {
   width: 98%;
-  padding-top: 2em;
+  @include paddingPercent(1024, 45, 0, 0, 0);
   margin: 0 auto;
-  color: $base-color;
-  background-color: $sub-color;
-  border-radius: 8px;
-  box-shadow: 6px 6px 0 4px rgba(212, 202, 166, 0.911);
+  color: $deep-color;
+  background-color: $light-color;
+  border-radius: 1em;
 
   @include mq(tab) {
     width: 100%;
-    box-shadow: 0 2px 0 4px rgba(212, 202, 166, 0.747);
-
   }
 }
 
 .title {
-  width: 96%;
-  padding: 1.5em 0 1em 2em;
-  margin: 0 auto 2.5em;
-  color: $sub-color;
-  background-color: $base-color;
-
-  border-radius: 10px;
+  width: 94%;
+  @include paddingPercent(1000, 20, 0, 20, 30);
+  margin: 0 auto 5em;
+  color: $light-color;
+  background-color: $deep-color;
+  border-radius: 1em;
 
   @include mq(tab) {
-    padding: 0.8em 0 0.8em 1em;
+    text-align: center;
+    width: 90%;
+    @include paddingPercent(768, 20, 0, 20, 0);
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     header  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 header {
   width: 100%;
-  height: 12em;
-  line-height: 12em;
+  @include text-middle(12em, 12em);
   text-align: center;
 
   @include mq(tab) {
-    height: 8em;
-    line-height: 8em;
+    @include text-middle(8em, 8em);
     margin: 3em 0 0;
   }
 }
 
 h1 {
-
   &::before,
   &::after {
-    content: "  ー  ";
+    content: "  -  ";
+    @include mq() {
+      display: none;
+    }
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     Profile  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 .profile-container {
   margin-bottom: 5em;
   display: flex;
-  justify-content: space-evenly;
-
+  justify-content: center;
+  /* tab から縦方向・中央寄せ*/
   @include mq(tab) {
     flex-direction: column-reverse;
     align-items: center;
@@ -265,7 +242,7 @@ h1 {
     width: 48%;
 
     @include mq(tab) {
-      width: 95%;
+      width: 80%;
       margin: 0 auto;
     }
 
@@ -287,43 +264,24 @@ h1 {
       }
 
       dt {
-        @include mq(pc) {
-          font-size: 2.4em;
-        }
-
         @include mq(tab) {
           justify-self: flex-end;
         }
-
-        @include mq() {
-          font-size: 1.8em;
-        }
-
         &.grid4 {
           grid-row: 4 / 7;
         }
-
-
         &.grid8 {
           grid-row: 7 / 11;
         }
-
       }
 
       dd {
-        @include mq(pc) {
-          font-size: 2em;
-        }
-
         @include mq(tab) {
-          padding-left: 15%;
+          @include paddingPercent(614, 0, 0, 0, 80);
         }
-
         @include mq() {
-          font-size: 1.4em;
-          padding-left: 5%;
+          @include paddingPercent(350, 0, 0, 0, 20);
         }
-
         &.grid1,
         &.grid2,
         &.grid3,
@@ -331,22 +289,17 @@ h1 {
         &.grid6,
         &.grid7 {
           grid-column: 2 / 4;
-
           @include mq() {
             grid-column: 2 / 3;
           }
         }
-
         &.grid9 {
           grid-column: 3 / 4;
           grid-row: 10 / 11;
-
           @include mq() {
             grid-column: 2 / 3;
           }
         }
-
-
       }
     }
   }
@@ -355,28 +308,20 @@ h1 {
     width: 45%;
     display: flex;
     flex-direction: column;
-
+    @include mq(tab) {
+      width: 55%;
+    }
     &--image1>img,
     &--image2>img {
       margin-bottom: 2em;
       width: 100%;
       height: auto;
-
-
     }
-
     &--image1 {
       @include mq(tab) {
         margin-bottom: 3em;
       }
-
-      img {
-        @include mq(tab) {
-          border-radius: 35%;
-        }
-      }
     }
-
     &--image2 {
       @include mq(tab) {
         display: none;
@@ -385,53 +330,52 @@ h1 {
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     History  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 .history-container {
   margin-bottom: 5em;
 
-  h3 {
-    padding-left: 0.8em;
-  }
 
   &__history-subtitle {
-    padding-bottom: 0.2em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid $base-color;
+    @include paddingPercent(1000, 0, 0, 10, 0);
+    margin: 0 auto 3em;
+    border-bottom: 1px solid $deep-color;
+      h3 {
+        @include paddingPercent(1000, 0, 0, 0, 20);
+        @include mq(tab) {
+          @include paddingPercent(700, 0, 0, 0, 40);
+        }
+      }
   }
 
   &__history-list {
     display: flex;
     justify-content: space-between;
     width: 98%;
-    padding: 1.5em;
-    margin: 0 auto 3em;
-
+    margin: 0 auto 10em;
     @include mq(tab) {
       flex-direction: column;
-      padding: 1em;
     }
 
     &--status {
       width: 30%;
-
       @include mq(tab) {
         width: 100%;
         height: auto;
-        margin-bottom: 26em;
+        margin-bottom: 28em;
       }
-
       @include mq() {
-        margin-bottom: 23em;
+        margin-bottom: 20em;
       }
     }
 
     dl {
-      margin-bottom: 0.5em;
+      margin-bottom: 1em;
 
       @include mq(tab) {
+        margin-bottom: 2em;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -439,23 +383,21 @@ h1 {
       }
 
       dt {
-        padding-bottom: 0.2em;
         margin: 0 0 0.5em;
         display: inline-block;
-        border-bottom: 1px solid $base-color;
-
+        border-bottom: 1px solid $deep-color;
         @include mq(tab) {
           width: 95%;
+          @include paddingPercent(760, 0, 0, 15, 50);
           margin-bottom: 2%;
         }
       }
 
       dd {
-        margin-bottom: 1em;
+        margin-bottom: 1.2em;
         line-height: 1.5em;
-
-        @include mq(pc) {
-          font-size: 1.7em;
+        @include mq(tab) {
+          @include paddingPercent(760, 0, 0, 0, 70);
         }
       }
     }
@@ -465,35 +407,32 @@ h1 {
       flex-direction: column;
       justify-content: space-between;
       width: 33%;
-
-
       @include mq(tab) {
         width: 95%;
-        margin-bottom: 24em;
+        margin-bottom: 18em;
       }
-
       &.last-hlt {
         @include mq(tab) {
-          margin-bottom: 12em;
+          margin-bottom: 10em;
         }
       }
 
       &-item {
         margin-bottom: 2em;
-
         h4 {
           margin-bottom: 0.5em;
 
+          @include mq(tab) {
+            @include paddingPercent(760, 0, 0, 20, 30);
+          }
           @include mq() {
             margin-bottom: 0.8em;
           }
         }
-
         p {
           line-height: 1.5em;
-
-          @include mq(pc) {
-            font-size: 2em;
+          @include mq(tab) {
+            @include paddingPercent(760, 0, 0, 20, 70);
           }
         }
       }
@@ -506,7 +445,12 @@ h1 {
       width: 37%;
 
       @include mq(tab) {
+        margin: 5em auto 0;
         width: 100%;
+      }
+      @include mq() {
+        margin: 2em auto 0;
+
       }
 
       img {
@@ -524,9 +468,9 @@ h1 {
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     Programing  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 .programing-container {
   padding: 1.2em 2em;
@@ -558,7 +502,7 @@ h1 {
     li {
       max-width: 36.5em;
       width: 45%;
-      border: 3px solid $base-color;
+      border: 3px solid $deep-color;
       border-radius: 10px;
       padding: 1em 1em 0 2em;
 
@@ -604,7 +548,7 @@ h1 {
       margin: 0 auto 5em;
       padding: 0 2em 2em;
 
-      border: 2px solid $base-color;
+      border: 2px solid $deep-color;
       border-top: none;
       border-radius: 1.6em;
 
@@ -620,12 +564,10 @@ h1 {
         line-height: 2.5em;
 
         @include mq(pc) {
-          font-size: 1.8em;
           line-height: 1.6em;
         }
 
         @include mq() {
-          font-size: 1.6em;
           line-height: 1.5em;
         }
       }
@@ -648,9 +590,9 @@ h1 {
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     Product  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 .product-container {
   padding: 1.2em 2em;
@@ -723,12 +665,12 @@ h1 {
       }
 
       a {
-        color: $sub-color;
-        background-color: $base-color;
+        color: $light-color;
+        background-color: $deep-color;
 
         &:hover {
-          color: $base-color;
-          background-color: $sub-color;
+          color: $deep-color;
+          background-color: $light-color;
           cursor: pointer;
         }
       }
@@ -751,7 +693,7 @@ h1 {
     li {
       dl {
         display: flex;
-        border: 2px solid $base-color;
+        border: 2px solid $deep-color;
         border-radius: 8px;
         padding: 1.4em;
         margin-bottom: 2em;
@@ -821,21 +763,21 @@ h1 {
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //        contact  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 .contact {
-  color: $base-color;
+  color: $deep-color;
   padding: 2em 0 1.5em;
 
   form {
     max-width: 70%;
-    background: $base-color;
+    background: $deep-color;
     padding: 3em 3em 2em;
     margin: 5em auto 3em;
     border-radius: 1.4em;
-    border: 4px solid $sub-color;
+    border: 4px solid $light-color;
 
     @include mq(tab) {
       padding: 2em 2em 1em;
@@ -915,10 +857,10 @@ h1 {
 
   input[type="submit"],
   input[type="reset"] {
-    background-color: $sub-color;
+    background-color: $light-color;
     display: inline-block;
     cursor: pointer;
-    color: $base-color;
+    color: $deep-color;
     padding: 0.8em 1.8em;
     text-decoration: none;
 
@@ -950,15 +892,15 @@ h1 {
 
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     footer  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 footer {
   padding: 4em 0;
   text-align: center;
   margin-top: 2.4em;
-  font-size: 1em;
+
 
   @include mq(tab) {
     padding: 2em 0;

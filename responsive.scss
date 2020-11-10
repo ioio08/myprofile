@@ -4,7 +4,6 @@ $breakpoints: (
   'pc': 'screen and (max-width: 1024px)',
 ) !default;
 
-
 @mixin mq($breakpoint: mb) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;

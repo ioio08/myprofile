@@ -1,0 +1,13 @@
+// text の垂直方向中央寄せ
+@mixin text-middle($height, $line-height) {
+  height: $height;
+  line-height: $line-height;
+}
+
+@mixin paddingPercent($parentWidth, $pTop, $pRight, $pBottom, $pLeft,) {
+  padding:floor((($pTop / $parentWidth) * 100%)) floor((($pRight / $parentWidth) * 100%)) floor((($pBottom / $parentWidth) * 100%)) floor((($pLeft / $parentWidth) * 100%));
+}
+
+@mixin marginPercent($parentWidth, $mTop, $mRight, $mBottom, $mLeft,) {
+  padding:floor((($mTop / $parentWidth) * 100%)) floor((($mRight / $parentWidth) * 100%)) floor((($mBottom / $parentWidth) * 100%)) floor((($mLeft / $parentWidth) * 100%));
+}
