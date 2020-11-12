@@ -580,7 +580,7 @@ h1::before, h1::after {
 @media screen and (max-width: 768px) {
   .history-container__history-list--text {
     width: 95%;
-    margin: 0% 0% 24% 0%;
+    margin: 0% 0% 33% 0%;
   }
 }
 

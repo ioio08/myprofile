@@ -428,11 +428,11 @@ h1 {
       width: 33%;
       @include mq(tab) {
         width: 95%;
-        @include marginPercent(750, 0, 0, 180, 0);
+        @include marginPercent(750, 0, 0, 250, 0);
       }
       &.last-hlt {
         @include mq(tab) {
-          @include marginPercent(760, 0, 0, 100, 0);
+          @include marginPercent(750, 0, 0, 100, 0);
         }
       }
 
