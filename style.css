@@ -1099,15 +1099,16 @@ h1::before, h1::after {
 
 @media screen and (max-width: 768px) {
   .contact form {
-    padding: 3% 2% 1% 2%;
+    padding: 3% 2% 3% 2%;
     margin: 3em auto 2em;
-    width: 70%;
+    max-width: none;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 425px) {
   .contact form {
-    padding: 7% 4% 2% 4%;
+    padding: 7% 4% 7% 4%;
   }
 }
 
@@ -1190,38 +1191,33 @@ h1::before, h1::after {
 
 .contact textarea {
   width: 100%;
-  height: 10em;
+  height: 10rem;
 }
 
 @media screen and (max-width: 768px) {
   .contact textarea {
     width: 80%;
-    height: 6em;
+    height: 9rem;
     margin: 0% 0% 5% 0%;
   }
 }
 
-.contact input[type="submit"],
-.contact input[type="reset"] {
-  background-color: rgba(255, 255, 255, 0.699);
-  display: block;
-  cursor: pointer;
-  color: rgba(137, 120, 69, 0.6);
-  padding: 26% 60% 26% 60%;
-  text-decoration: none;
+.contact input,
+.contact textarea {
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 768px) {
-  .contact input[type="submit"],
-  .contact input[type="reset"] {
-    padding: 13% 30% 13% 30%;
+  .contact input,
+  .contact textarea {
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 425px) {
-  .contact input[type="submit"],
-  .contact input[type="reset"] {
-    padding: 11% 25% 11% 25%;
+@media screen and (max-width: 768px) {
+  .contact input,
+  .contact textarea {
+    font-size: 0.5rem;
   }
 }
 
@@ -1236,13 +1232,37 @@ h1::before, h1::after {
 
 @media screen and (max-width: 768px) {
   .contact-submit {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
-.contact-submit li {
-  margin: 0% 10% 0% 0%;
+.contact input[type="submit"],
+.contact input[type="reset"] {
+  display: block;
+  width: 15%;
+  cursor: pointer;
+  color: rgba(137, 120, 69, 0.6);
+  background-color: rgba(255, 255, 255, 0.699);
+  text-decoration: none;
+  padding: 2% 2% 2% 2%;
+  margin: 0% 5% 0% 0%;
+}
+
+@media screen and (max-width: 768px) {
+  .contact input[type="submit"],
+  .contact input[type="reset"] {
+    width: 25%;
+    padding: 3% 4% 3% 4%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .contact input[type="submit"],
+  .contact input[type="reset"] {
+    width: 30%;
+    padding: 4% 6% 4% 6%;
+  }
 }
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
