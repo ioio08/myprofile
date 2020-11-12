@@ -7,13 +7,9 @@
 @import "font-size.scss";
 @import "layout.scss";
 
-//TODO marginWidthの指定
 //TODO マジックナンバー、ハードコーディング注意
 //TODO contact再デザイン
 //TODO product欄にポートフォリオサイトを記載する
-
-
-
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
       全体設定
@@ -339,7 +335,6 @@ h1 {
 .history-container {
   margin-bottom: 5em;
 
-
   &__history-subtitle {
     @include paddingPercent(1000, 0, 0, 10, 0);
     margin: 0 auto 3em;
@@ -367,15 +362,16 @@ h1 {
       @include mq(tab) {
         width: 100%;
         height: auto;
-        margin-bottom: 28em;
         @include marginPercent(720, 0, 0, 300, 0);
       }
 
       @include mq() {
-        margin-bottom: 20em;
         @include marginPercent(420, 0, 0, 200, 0);
       }
 
+      /* History-container__history-list--status の最後の纏りに対してstyle適応*/
+      /* hls = History List Status の頭文字 */
+      /* :last-child不採用なのは、クラス名を指定して適応させられないから*/
       &.last-hls {
         @include mq(tab) {
           @include marginPercent(720, 0, 0, 280, 0);
@@ -404,6 +400,7 @@ h1 {
         @include marginPercent(300, 0, 0, 5, 0);
         display: inline-block;
         border-bottom: 1px solid $deep-color;
+
         @include mq(tab) {
           width: 95%;
           @include paddingPercent(760, 0, 0, 15, 50);
@@ -414,6 +411,7 @@ h1 {
       dd {
         @include marginPercent(300, 0, 0, 12, 0);
         line-height: 1.5em;
+
         @include mq(tab) {
           @include paddingPercent(760, 0, 0, 0, 70);
           @include marginPercent(760, 0, 0, 20, 0);
@@ -426,10 +424,15 @@ h1 {
       flex-direction: column;
       justify-content: space-between;
       width: 33%;
+
       @include mq(tab) {
         width: 95%;
         @include marginPercent(750, 0, 0, 250, 0);
       }
+
+      /* History-container__history-list--text の最後の纏りに対してstyle適応*/
+      /* hlt = History List Text の頭文字 */
+      /* :last-child不採用なのは、クラス名を指定して適応させられないから*/
       &.last-hlt {
         @include mq(tab) {
           @include marginPercent(750, 0, 0, 100, 0);
@@ -439,6 +442,7 @@ h1 {
       &-item {
         margin-bottom: 2em;
         @include marginPercent(700, 0, 0, 20, 0);
+
         h4 {
           @include marginPercent(300, 0, 0, 8, 0);
 
@@ -450,8 +454,10 @@ h1 {
             @include marginPercent(400, 0, 0, 10, 0);
           }
         }
+
         p {
           line-height: 1.5em;
+
           @include mq(tab) {
             @include paddingPercent(760, 0, 0, 20, 70);
           }
@@ -469,9 +475,9 @@ h1 {
         margin: 5em auto 0;
         width: 100%;
       }
+
       @include mq() {
         margin: 2em auto 0;
-
       }
 
       img {
@@ -483,13 +489,10 @@ h1 {
         @include mq(tab) {
           width: 50%;
         }
-
       }
     }
   }
 }
-
-
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     Programing  設定
@@ -537,10 +540,12 @@ h1 {
         @include marginPercent(760, 0, 0, 25, 0);
         min-width: 25em;
       }
+
       @include mq() {
         @include paddingPercent(425, 10, 10, 0, 20);
       }
 
+      /* Programing-container__programing-skill > li:last-childに対してのstyle */
       &:last-child {
         max-width: 36.5em;
         @include marginPercent(1000, 0, 0, 0, 40);
@@ -585,6 +590,7 @@ h1 {
       @include mq(tab) {
         @include paddingPercent(730, 0, 20, 20, 20);
       }
+
       @include mq() {
         @include paddingPercent(425, 0, 20, 20, 20);
         @include marginPercent(425, 0, 0, 30, 0);
@@ -617,6 +623,7 @@ h1 {
       width: 40%;
       height: auto;
 
+      /* Programing 添付の写真１枚目に対して、margin-right */
       &:first-child {
         @include marginPercent(950, 0, 50, 0, 0);
       }
@@ -675,12 +682,9 @@ h1 {
         background-size: cover;
       }
 
-      @include mq(tab) {}
-
       @include mq() {
         height: 15em;
       }
-
     }
 
     p {
@@ -690,6 +694,7 @@ h1 {
       @include mq(tab) {
         @include paddingPercent(730, 10, 0, 0, 0);
       }
+
       @include mq() {
         @include paddingPercent(400, 10, 0, 0, 0);
       }
@@ -749,8 +754,6 @@ h1 {
             width: 80%;
             margin: 0 auto;
           }
-
-
         }
       }
     }
@@ -768,10 +771,10 @@ h1 {
         @include mq(tab) {
           width: 100%;
         }
+
         @include mq() {
           max-width: none;
         }
-
 
         dl {
           dt {
@@ -839,6 +842,7 @@ h1 {
       margin: 3em auto 2em;
       width: 70%;
     }
+
     @include mq() {
       @include paddingPercent(425, 30, 20, 10, 20);
     }
@@ -862,6 +866,7 @@ h1 {
     @include mq(tab) {
       @include paddingPercent(520, 14, 13, 14, 13);
     }
+
     @include mq() {
       @include paddingPercent(350, 14, 13, 14, 13);
     }
@@ -934,10 +939,10 @@ h1 {
     }
   }
 
-
   &-submit {
     display: flex;
     justify-content: left;
+
     @include mq(tab) {
       justify-content: space-around;
     }

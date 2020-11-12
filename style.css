@@ -487,20 +487,21 @@ h1::before, h1::after {
 
 .history-container__history-list--status {
   width: 30%;
+  /* History-container__history-list--status の最後の纏りに対してstyle適応*/
+  /* hls = History List Status の頭文字 */
+  /* :last-child不採用なのは、クラス名を指定して適応させられないから*/
 }
 
 @media screen and (max-width: 768px) {
   .history-container__history-list--status {
     width: 100%;
     height: auto;
-    margin-bottom: 28em;
     margin: 0% 0% 41% 0%;
   }
 }
 
 @media screen and (max-width: 425px) {
   .history-container__history-list--status {
-    margin-bottom: 20em;
     margin: 0% 0% 47% 0%;
   }
 }
@@ -575,6 +576,9 @@ h1::before, h1::after {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 33%;
+  /* History-container__history-list--text の最後の纏りに対してstyle適応*/
+  /* hlt = History List Text の頭文字 */
+  /* :last-child不採用なのは、クラス名を指定して適応させられないから*/
 }
 
 @media screen and (max-width: 768px) {
@@ -721,6 +725,7 @@ h1::before, h1::after {
   border: 3px solid rgba(137, 120, 69, 0.6);
   border-radius: 10px;
   padding: 1% 1% 0% 2%;
+  /* Programing-container__programing-skill > li:last-childに対してのstyle */
 }
 
 @media screen and (max-width: 768px) {
@@ -829,6 +834,7 @@ h1::before, h1::after {
   max-width: 35em;
   width: 40%;
   height: auto;
+  /* Programing 添付の写真１枚目に対して、margin-right */
 }
 
 .programing-container__programing-images img:first-child {
