@@ -1,6 +1,5 @@
 # My-Profile
-## 履歴書には書ききれない、パーソナルな部分に焦点を当てたサイトです。  
-アクセス：https://profile-1st.netlify.app/
+## 履歴書には書ききれない、パーソナルな部分に焦点を当てたサイトです。  アクセス：https://profile-1st.netlify.app/
 ### （Netlify にデプロイしています。）
 
 
