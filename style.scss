@@ -10,7 +10,6 @@
 //TODO marginWidthの指定
 //TODO マジックナンバー、ハードコーディング注意
 //TODO contact再デザイン
-//TODO 大学経歴頑張ったこと『アルバイト』追加
 //TODO product欄にポートフォリオサイトを記載する
 
 
@@ -144,10 +143,6 @@ h4::before {
   margin-right: 0.4em;
 }
 
-dt::after {
-  content: "：";
-}
-
 img {
   border-radius: 1em;
 }
@@ -219,7 +214,6 @@ header {
 
   @include mq(tab) {
     @include text-middle(8em, 8em);
-    margin: 3em 0 0;
   }
 }
 
@@ -362,7 +356,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 98%;
-    margin: 0 auto 10em;
+    margin: 0 auto 6em;
+
     @include mq(tab) {
       flex-direction: column;
     }
@@ -373,17 +368,31 @@ h1 {
         width: 100%;
         height: auto;
         margin-bottom: 28em;
+        @include marginPercent(720, 0, 0, 300, 0);
       }
+
       @include mq() {
         margin-bottom: 20em;
+        @include marginPercent(420, 0, 0, 200, 0);
+      }
+
+      &.last-hls {
+        @include mq(tab) {
+          @include marginPercent(720, 0, 0, 280, 0);
+        }
+
+        @include mq() {
+          @include marginPercent(420, 0, 0, 180, 0);
+
+        }
       }
     }
 
     dl {
-      margin-bottom: 1em;
+      @include marginPercent(280, 0, 0, 10, 0);
 
       @include mq(tab) {
-        margin-bottom: 2em;
+        @include marginPercent(750, 0, 0, 20, 0);
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -391,21 +400,23 @@ h1 {
       }
 
       dt {
-        margin: 0 0 0.5em;
+        @include paddingPercent(300, 0, 0, 8, 0);
+        @include marginPercent(300, 0, 0, 5, 0);
         display: inline-block;
         border-bottom: 1px solid $deep-color;
         @include mq(tab) {
           width: 95%;
           @include paddingPercent(760, 0, 0, 15, 50);
-          margin-bottom: 2%;
+          @include marginPercent(760, 0, 0, 20, 0);
         }
       }
 
       dd {
-        margin-bottom: 1.2em;
+        @include marginPercent(300, 0, 0, 12, 0);
         line-height: 1.5em;
         @include mq(tab) {
           @include paddingPercent(760, 0, 0, 0, 70);
+          @include marginPercent(760, 0, 0, 20, 0);
         }
       }
     }
@@ -417,24 +428,26 @@ h1 {
       width: 33%;
       @include mq(tab) {
         width: 95%;
-        margin-bottom: 18em;
+        @include marginPercent(750, 0, 0, 180, 0);
       }
       &.last-hlt {
         @include mq(tab) {
-          margin-bottom: 10em;
+          @include marginPercent(760, 0, 0, 100, 0);
         }
       }
 
       &-item {
         margin-bottom: 2em;
+        @include marginPercent(700, 0, 0, 20, 0);
         h4 {
-          margin-bottom: 0.5em;
+          @include marginPercent(300, 0, 0, 8, 0);
 
           @include mq(tab) {
             @include paddingPercent(760, 0, 0, 20, 30);
           }
           @include mq() {
             margin-bottom: 0.8em;
+            @include marginPercent(400, 0, 0, 10, 0);
           }
         }
         p {
@@ -485,7 +498,7 @@ h1 {
 .programing-container {
   padding: 1.2em 2em;
   @include paddingPercent(1000, 12, 20, 12, 20);
-  margin-bottom: 5em;
+  @include marginPercent(1000, 0, 0, 50, 0);
 
   @include mq(tab) {
     display: flex;
@@ -494,10 +507,12 @@ h1 {
 
   &__programing-skill {
     margin-bottom: 5em;
+    @include marginPercent(950, 0, 0, 50, 0);
 
     h4 {
       display: inline-block;
       margin-bottom: 1.4em;
+      @include marginPercent(400, 0, 0, 14, 0);
     }
 
     ul {
@@ -515,12 +530,11 @@ h1 {
       width: 45%;
       border: 3px solid $deep-color;
       border-radius: 10px;
-      padding: 1em 1em 0 2em;
       @include paddingPercent(1000, 10, 10, 0, 20);
 
       @include mq(tab) {
         @include paddingPercent(760, 10, 10, 0, 20);
-        margin-bottom: 2em;
+        @include marginPercent(760, 0, 0, 25, 0);
         min-width: 25em;
       }
       @include mq() {
@@ -529,7 +543,7 @@ h1 {
 
       &:last-child {
         max-width: 36.5em;
-        margin-left: 4em;
+        @include marginPercent(1000, 0, 0, 0, 40);
         width: 45%;
 
         @include mq(tab) {
@@ -546,15 +560,16 @@ h1 {
       dt,
       dd {
         margin-bottom: 1.5em;
+        @include marginPercent(300, 0, 0, 30, 0);
       }
     }
   }
 
   &__programing-text {
-    margin-bottom: 4em;
+    @include marginPercent(1000, 0, 0, 40, 0);
 
     @include mq() {
-      margin-bottom: 2em;
+      @include marginPercent(760, 0, 0, 20, 0);
     }
 
     &--purpose,
@@ -572,11 +587,11 @@ h1 {
       }
       @include mq() {
         @include paddingPercent(425, 0, 20, 20, 20);
-        margin-bottom: 3em;
+        @include marginPercent(425, 0, 0, 30, 0);
       }
 
       h4 {
-        margin-bottom: 1em;
+        @include marginPercent(650, 0, 0, 15, 0);
       }
 
       p {
@@ -603,7 +618,7 @@ h1 {
       height: auto;
 
       &:first-child {
-        margin-right: 5em;
+        @include marginPercent(950, 0, 50, 0, 0);
       }
     }
   }
@@ -614,9 +629,8 @@ h1 {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 .product-container {
-  padding: 1.2em 2em;
   @include paddingPercent(1000, 12, 20, 12, 20);
-  margin-bottom: 2em;
+  @include marginPercent(1000, 0, 0, 20, 0);
   display: flex;
   justify-content: space-between;
 
@@ -641,11 +655,11 @@ h1 {
     }
 
     @include mq() {
-      margin-bottom: 2em;
+      @include marginPercent(400, 0, 0, 20, 0);
     }
 
     h2 {
-      margin-bottom: 1em;
+      @include marginPercent(800, 0, 0, 30, 0);
     }
 
     &--image {
@@ -720,10 +734,11 @@ h1 {
         border: 2px solid $deep-color;
         border-radius: 8px;
         @include paddingPercent(330, 14, 14, 14, 14);
-        margin-bottom: 2em;
+        @include marginPercent(330, 0, 0, 20, 0);
 
         @include mq(pc) {
           margin-bottom: 4em;
+          @include marginPercent(860, 0, 0, 40, 0);
         }
 
         dd {
@@ -745,31 +760,35 @@ h1 {
         display: flex;
         justify-content: space-evenly;
         width: 100%;
+      }
 
-        li {
-          max-width: 33em;
-          width: 48%;
-          @include mq(tab) {
-            width: 100%;
+      li {
+        max-width: 33em;
+        width: 48%;
+        @include mq(tab) {
+          width: 100%;
+        }
+
+
+        dl {
+          dt {
+            width: 55%;
           }
 
+          dd {
+            width: 45%;
 
-          dl {
-            dt {
-              width: 55%;
+            &.flex-item {
+              @include marginPercent(100, 0, 0, 13, 13);
             }
 
-            dd {
-              width: 45%;
+            &:last-child {
+              @include marginPercent(100, 0, 0, 0, 0);
+            }
 
-              &.flex-item {
-                margin-bottom: 1.3em;
-              }
-
-              @include mq(pc) {
-                line-height: 1em;
-                width: auto;
-              }
+            @include mq(pc) {
+              line-height: 1em;
+              width: auto;
             }
           }
         }
@@ -807,7 +826,6 @@ h1 {
   form {
     max-width: 70%;
     background: $deep-color;
-    padding: 3em 3em 2em;
     @include paddingPercent(1000, 30, 30, 20, 30);
     margin: 5em auto 3em;
     border-radius: 1.4em;
@@ -825,7 +843,7 @@ h1 {
 
   li {
     display: block;
-    margin-bottom: 1.4em;
+    @include marginPercent(800, 30, 0, 30, 0);
     min-height: 3.5em;
 
     @include mq(tab) {
@@ -836,13 +854,13 @@ h1 {
 
   &-style {
     box-sizing: border-box;
-    @include paddingPercent(700, 13, 13, 13, 13);
+    @include paddingPercent(700, 14, 13, 14, 13);
 
     @include mq(tab) {
-      @include paddingPercent(520, 13, 13, 13, 13);
+      @include paddingPercent(520, 14, 13, 14, 13);
     }
     @include mq() {
-      @include paddingPercent(350, 13, 13, 13, 13);
+      @include paddingPercent(350, 14, 13, 14, 13);
     }
   }
 
@@ -864,7 +882,7 @@ h1 {
 
   input {
     @include mq(tab) {
-      margin-bottom: 0.7em;
+      @include marginPercent(520, 0, 0, 20, 0);
     }
   }
 
@@ -891,7 +909,7 @@ h1 {
     @include mq(tab) {
       width: 80%;
       height: 6em;
-      margin-bottom: 0.8em;
+      @include marginPercent(520, 0, 0, 30, 0);
     }
   }
 
@@ -920,9 +938,11 @@ h1 {
 
     li {
       margin-right: 10%;
+      @include marginPercent(700, 0, 70, 0, 0);
 
       @include mq(tab) {
         margin-left: 10%;
+        @include marginPercent(520, 0, 30, 0, 52);
       }
     }
 
@@ -937,15 +957,22 @@ h1 {
 footer {
   @include paddingPercent(1000, 40, 0, 40, 0);
   text-align: center;
-  margin-top: 2.4em;
+  @include marginPercent(1000, 0, 0, 24, 0);
 
 
   @include mq(tab) {
-    @include paddingPercent(1000, 20, 0, 20, 0);
-    margin-top: 2em;
+    @include paddingPercent(760, 20, 0, 20, 0);
+    @include marginPercent(760, 0, 0, 20, 0);
   }
 
-  h1 {
+  @include mq() {
+    @include paddingPercent(425, 20, 0, 20, 0);
+    @include marginPercent(425, 0, 0, 20, 0);
+  }
+
+  h2 {
     margin-bottom: 1em;
+    @include marginPercent(1000, 0, 0, 30, 0);
+
   }
 }

@@ -11,5 +11,5 @@
 
 // 必要なmargin / 親要素のコンテンツ幅(padding, margin含めず) * 100%
 @mixin marginPercent($parentWidth, $mTop, $mRight, $mBottom, $mLeft,) {
-  padding:floor((($mTop / $parentWidth) * 100%)) floor((($mRight / $parentWidth) * 100%)) floor((($mBottom / $parentWidth) * 100%)) floor((($mLeft / $parentWidth) * 100%));
+  margin:floor((($mTop / $parentWidth) * 100%)) floor((($mRight / $parentWidth) * 100%)) floor((($mBottom / $parentWidth) * 100%)) floor((($mLeft / $parentWidth) * 100%));
 }
