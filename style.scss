@@ -758,7 +758,7 @@ h1 {
     &--item {
       @include mq(pc) {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
       }
 
@@ -767,6 +767,9 @@ h1 {
         width: 48%;
         @include mq(tab) {
           width: 100%;
+        }
+        @include mq() {
+          max-width: none;
         }
 
 
@@ -935,15 +938,12 @@ h1 {
   &-submit {
     display: flex;
     justify-content: left;
+    @include mq(tab) {
+      justify-content: space-around;
+    }
 
     li {
-      margin-right: 10%;
       @include marginPercent(700, 0, 70, 0, 0);
-
-      @include mq(tab) {
-        margin-left: 10%;
-        @include marginPercent(520, 0, 30, 0, 52);
-      }
     }
 
   }

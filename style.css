@@ -999,9 +999,9 @@ h1::before, h1::after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
   }
 }
@@ -1014,6 +1014,12 @@ h1::before, h1::after {
 @media screen and (max-width: 768px) {
   .product-container__product-right--item li {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .product-container__product-right--item li {
+    max-width: none;
   }
 }
 
@@ -1222,16 +1228,15 @@ h1::before, h1::after {
           justify-content: left;
 }
 
-.contact-submit li {
-  margin-right: 10%;
-  margin: 0% 10% 0% 0%;
+@media screen and (max-width: 768px) {
+  .contact-submit {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
-@media screen and (max-width: 768px) {
-  .contact-submit li {
-    margin-left: 10%;
-    margin: 0% 5% 0% 10%;
-  }
+.contact-submit li {
+  margin: 0% 10% 0% 0%;
 }
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
