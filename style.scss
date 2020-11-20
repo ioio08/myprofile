@@ -1,20 +1,18 @@
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     import設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 
-@import "responsive.scss";
-@import "color.scss";
-@import "font-size.scss";
-@import "layout.scss";
+@import "./scss/responsive.scss";
+@import "./scss/color.scss";
+@import "./scss/font-size";
+@import "./scss/layout.scss";
 
 //TODO マジックナンバー、ハードコーディング注意
-//TODO contact再デザイン
 //TODO product欄にポートフォリオサイトを記載する
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
       全体設定
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
-
 * {
   padding: 0;
   margin: 0;

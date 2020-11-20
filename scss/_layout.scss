@@ -1,15 +1,15 @@
-// text の垂直方向中央寄せ
+/*  text の垂直方向中央寄せ */
 @mixin text-middle($height, $line-height) {
   height: $height;
   line-height: $line-height;
 }
 
-// 必要なpadding / 親要素のコンテンツ幅(padding, margin含めず) * 100%
+/*  必要なpadding / 親要素のコンテンツ幅(padding, margin含めず) * 100% */
 @mixin paddingPercent($parentWidth, $pTop, $pRight, $pBottom, $pLeft,) {
   padding:floor((($pTop / $parentWidth) * 100%)) floor((($pRight / $parentWidth) * 100%)) floor((($pBottom / $parentWidth) * 100%)) floor((($pLeft / $parentWidth) * 100%));
 }
 
-// 必要なmargin / 親要素のコンテンツ幅(padding, margin含めず) * 100%
+/*  必要なmargin / 親要素のコンテンツ幅(padding, margin含めず) * 100% */
 @mixin marginPercent($parentWidth, $mTop, $mRight, $mBottom, $mLeft,) {
   margin:floor((($mTop / $parentWidth) * 100%)) floor((($mRight / $parentWidth) * 100%)) floor((($mBottom / $parentWidth) * 100%)) floor((($mLeft / $parentWidth) * 100%));
 }
