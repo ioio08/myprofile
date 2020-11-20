@@ -33,6 +33,7 @@ body {
 
 a {
   text-decoration: none;
+  color: $light-color;
 }
 
 li {
@@ -139,6 +140,7 @@ h4::before {
 
 img {
   border-radius: 1em;
+  box-shadow: $deep-shadow;
 }
 
 input,
@@ -176,6 +178,7 @@ textarea {
   color: $deep-color;
   background-color: $light-color;
   border-radius: 1em;
+  box-shadow: $deep-shadow;
 
   @include mq(tab) {
     width: 100%;
@@ -189,6 +192,7 @@ textarea {
   color: $light-color;
   background-color: $deep-color;
   border-radius: 1em;
+  box-shadow: $light-shadow;
 
   @include mq(tab) {
     text-align: center;
@@ -218,6 +222,49 @@ h1 {
     @include mq() {
       display: none;
     }
+  }
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     Navigation  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+nav {
+  margin: 0 0 5rem;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  li {
+    font-size: 2.5rem;
+    background: $deep-color;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+  a {
+
+  }
+}
+
+#top-link {
+  &.hidden {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    color: $light-color;
+    background: $arrow-color;
+    font-size: 3.5rem;
+    padding: 5px 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px black;
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
   }
 }
 
@@ -922,14 +969,14 @@ h1 {
 
   input,
   textarea {
-    font-size: 1.2rem;
+    font-size: $input-base;
 
     @include mq(tab) {
-      font-size: 1rem;
+      font-size: $input-tab;
     }
 
-    @include mq(tab) {
-      font-size: 0.5rem;
+    @include mq() {
+      font-size: $input-mb;
     }
   }
 

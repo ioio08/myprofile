@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -13,13 +14,32 @@
     <h1>I.Wakita Profile</h1>
   </header>
 
-  <!-- Wrapper  設定 -->
+  <!-- Wrapper -->
   <div class="wrapper">
-    <div class="title">
-      <h2>Profile</h2>
+
+    <!-- Navigation -->
+    <div id="Navigation" class="title">
+      <h2>Navigation</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#Profile">Profile</a></li>
+        <li><a href="#History">History</a></li>
+        <li><a href="#Programing">Programing</a></li>
+        <li><a href="#Product">Product</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="top-link" class="hidden">
+      <a href="#">
+        <i class="fas fa-angle-up"></i>
+      </a>
     </div>
 
     <!-- Profile  設定 -->
+    <div id="Profile" class="title">
+      <h2>Profile</h2>
+    </div>
     <div class="profile-container">
       <div class="profile-container__profile-list">
         <dl>
@@ -61,7 +81,7 @@
 
     <!-- History  設定 -->
     <div class="history-container">
-      <div class="title">
+      <div id="History" class="title">
         <h2>経歴</h2>
       </div>
       <div class="history-container__history-subtitle">
@@ -192,7 +212,7 @@
 
     <!-- Programing  設定 -->
     <div class="programing">
-      <div class="title">
+      <div id="Programing" class="title">
         <h2>Programing学習</h2>
       </div>
       <div class="programing-container">
@@ -257,7 +277,7 @@
 
     <!-- Product  設定 -->
     <div class="product">
-      <div class="title">
+      <div id="Product" class="title">
         <h2>Product</h2>
       </div>
       <div class="product-container">
@@ -314,7 +334,7 @@
 
     <!-- Contact  設定 -->
     <div class="contact">
-      <div class="title">
+      <div id="Contact" class="title">
         <h2>Contact</h2>
       </div>
       <form  name="contact" method="POST" data-netlify="true">
@@ -347,6 +367,8 @@
     <h2>I.Wakita Profile</h2>
     <p>©︎I.W Design.</p>
   </footer>
+
+  <script src="index.js"></script>
 </body>
 
 </html>

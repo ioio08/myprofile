@@ -40,6 +40,9 @@ pc:
 // ===========*/
 /* dt */
 /* dd  */
+/* ==================
+//  input, textarea
+// ================== */
 /*  text の垂直方向中央寄せ */
 /*  必要なpadding / 親要素のコンテンツ幅(padding, margin含めず) * 100% */
 /*  必要なmargin / 親要素のコンテンツ幅(padding, margin含めず) * 100% */
@@ -66,6 +69,7 @@ body {
 
 a {
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.699);
 }
 
 li {
@@ -235,6 +239,8 @@ h4::before {
 
 img {
   border-radius: 1em;
+  -webkit-box-shadow: 2px 2px 20px #0c0c0c;
+          box-shadow: 2px 2px 20px #0c0c0c;
 }
 
 input,
@@ -271,6 +277,8 @@ textarea {
   color: rgba(137, 120, 69, 0.6);
   background-color: rgba(255, 255, 255, 0.699);
   border-radius: 1em;
+  -webkit-box-shadow: 2px 2px 20px #0c0c0c;
+          box-shadow: 2px 2px 20px #0c0c0c;
 }
 
 @media screen and (max-width: 768px) {
@@ -286,6 +294,8 @@ textarea {
   color: rgba(255, 255, 255, 0.699);
   background-color: rgba(137, 120, 69, 0.6);
   border-radius: 1em;
+  -webkit-box-shadow: 1px 1px 10px #0c0c0c;
+          box-shadow: 1px 1px 10px #0c0c0c;
 }
 
 @media screen and (max-width: 768px) {
@@ -321,6 +331,48 @@ h1::before, h1::after {
   h1::before, h1::after {
     display: none;
   }
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     Navigation  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+nav {
+  margin: 0 0 5rem;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+}
+
+nav li {
+  font-size: 2.5rem;
+  background: rgba(137, 120, 69, 0.6);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+#top-link.hidden {
+  display: none;
+}
+
+#top-link a {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.699);
+  background: rgba(137, 120, 69, 0.9);
+  font-size: 3.5rem;
+  padding: 5px 10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 4px 4px black;
+          box-shadow: 0 4px 4px black;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
 }
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -1258,7 +1310,7 @@ h1::before, h1::after {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   .contact input,
   .contact textarea {
     font-size: 0.5rem;
