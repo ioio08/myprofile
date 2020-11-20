@@ -1,0 +1,36 @@
+/* ブレイクポイント設定 */
+
+/*
+mobile: ~ 425px
+tablet: 426px ~ 768px
+pc: 769px ~ 1024px
+*/
+
+
+$breakpoints: (
+  'mb': 'screen and (max-width: 425px)',
+  'tab': 'screen and (max-width: 768px)',
+  'pc': 'screen and (max-width: 1024px)',
+) !default;
+
+/* 記述方法  (default: mq引数指定がない場合は、mobileが適応される)
+mobile:
+@include mq() {
+  ...処理記載
+}
+tablet:
+@include mq(tab) {
+  ...処理記載
+}
+pc:
+@include mq(pc) {
+  ...処理記載
+}
+*/
+
+@mixin mq($breakpoint: mb) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+

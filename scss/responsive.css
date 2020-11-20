@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* ブレイクポイント設定 */
+/*
+mobile: ~ 425px
+tablet: 426px ~ 768px
+pc: 769px ~ 1024px
+*/
+/* 記述方法  (default: mq引数指定がない場合は、mobileが適応される)
+mobile:
+@include mq() {
+  ...処理記載
+}
+tablet:
+@include mq(tab) {
+  ...処理記載
+}
+pc:
+@include mq(pc) {
+  ...処理記載
+}
+*/
+/*# sourceMappingURL=responsive.css.map */
