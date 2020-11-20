@@ -2,10 +2,12 @@
 //     import設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 
-@import "./scss/responsive.scss";
-@import "./scss/color.scss";
 @import "./scss/font-size";
-@import "./scss/layout.scss";
+@import "./scss/color";
+@import "./scss/responsive";
+@import "./scss/layout";
+@import "./scss/animation";
+
 
 //TODO マジックナンバー、ハードコーディング注意
 //TODO product欄にポートフォリオサイトを記載する
@@ -29,10 +31,13 @@ body {
   line-height: 1;
   color: $light-color;
   background-color: $deep-color;
+  animation-name: fade-in;
+  animation-duration: 3s;
 }
 
 a {
   text-decoration: none;
+  color: $light-color;
 }
 
 li {
@@ -139,6 +144,7 @@ h4::before {
 
 img {
   border-radius: 1em;
+  box-shadow: $deep-shadow;
 }
 
 input,
@@ -165,6 +171,15 @@ textarea {
   }
 }
 
+.drop-up {
+  display: none;
+  transition: 1s;
+}
+.dro-down {
+  display: block;
+  transition: 1s;
+}
+
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     wrapper  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
@@ -176,6 +191,7 @@ textarea {
   color: $deep-color;
   background-color: $light-color;
   border-radius: 1em;
+  box-shadow: $deep-shadow;
 
   @include mq(tab) {
     width: 100%;
@@ -184,17 +200,40 @@ textarea {
 
 .title {
   width: 94%;
+  display: flex;
+  align-content: center;
   @include paddingPercent(1000, 20, 0, 20, 30);
   margin: 0 auto 5em;
   color: $light-color;
   background-color: $deep-color;
   border-radius: 1em;
+  box-shadow: $light-shadow;
 
   @include mq(tab) {
     text-align: center;
     width: 90%;
     @include paddingPercent(768, 20, 0, 20, 0);
   }
+
+  .drop-btn {
+    display: flex;
+    align-items: center;
+    font-size: 2.5em;
+    border: 2px solid $light-color;
+    border-radius: 50%;
+    padding: 3px 6px;
+    margin-right: 20px;
+  }
+}
+
+
+.fade {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: 3s;
 }
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -218,6 +257,46 @@ h1 {
     @include mq() {
       display: none;
     }
+  }
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//     Navigation  設定
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+nav {
+  margin: 0 0 5rem;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  a {
+    border-radius: 10px;
+    background: $deep-color;
+    font-size: 2.5rem;
+    padding: 10px 15px;
+    box-shadow: $light-shadow;
+  }
+}
+
+#top-link {
+  &.hidden {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    color: $light-color;
+    background: $arrow-color;
+    font-size: 3.5rem;
+    padding: 5px 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px black;
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
   }
 }
 
@@ -834,6 +913,7 @@ h1 {
     margin: 5em auto 3em;
     border-radius: 1.4em;
     border: 4px solid $light-color;
+    box-shadow: $deep-shadow;
 
     @include mq(tab) {
       @include paddingPercent(760, 30, 20, 30, 20);
@@ -922,14 +1002,14 @@ h1 {
 
   input,
   textarea {
-    font-size: 1.2rem;
+    font-size: $input-base;
 
     @include mq(tab) {
-      font-size: 1rem;
+      font-size: $input-tab;
     }
 
-    @include mq(tab) {
-      font-size: 0.5rem;
+    @include mq() {
+      font-size: $input-mb;
     }
   }
 

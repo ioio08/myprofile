@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -13,13 +14,35 @@
     <h1>I.Wakita Profile</h1>
   </header>
 
-  <!-- Wrapper  設定 -->
+  <!-- Wrapper -->
   <div class="wrapper">
-    <div class="title">
-      <h2>Profile</h2>
+
+    <!-- Navigation -->
+    <div id="Navigation" class="title">
+      <div class="drop-btn">
+        <i class="fas fa-angle-down"></i>
+      </div>
+      <h2>Navigation</h2>
+    </div>
+    <nav class="drop-down">
+      <ul>
+        <li><a href="#Profile">Profile</a></li>
+        <li><a href="#History">History</a></li>
+        <li><a href="#Programing">Programing</a></li>
+        <li><a href="#Product">Product</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="top-link" class="hidden">
+      <a href="#">
+        <i class="fas fa-angle-up"></i>
+      </a>
     </div>
 
     <!-- Profile  設定 -->
+    <div id="Profile" class="title">
+      <h2>Profile</h2>
+    </div>
     <div class="profile-container">
       <div class="profile-container__profile-list">
         <dl>
@@ -60,7 +83,7 @@
     </div>
 
     <!-- History  設定 -->
-    <div class="history-container">
+    <div id="History" class="history-container fade">
       <div class="title">
         <h2>経歴</h2>
       </div>
@@ -103,95 +126,99 @@
           </div>
         </div>
         <div class="history-container__history-list--image">
-          <img src="images/history_images/history_1.jpeg" alt="">
+          <img src="images/history_images/history_1.jpeg">
         </div>
       </div>
-      <div class="history-container__history-subtitle">
-        <h3>高校生</h3>
-      </div>
-      <div class="history-container__history-list">
-        <div class="history-container__history-list--status">
-          <dl>
-            <dt>年代</dt>
-            <dd>2011年4月 (H.23)：入学</dd>
-            <dd>2014年3月 (H.26)：卒業</dd>
-            <dt>年齢</dt>
-            <dd>15~18歳</dd>
-            <dt>学校</dt>
-            <dd>育英高等学校</dd>
-            <dt>特筆</dt>
-            <dd>兵庫県予選・夏冬制覇</dd>
-          </dl>
+      <div id="fade-highschool" class="fade" >
+        <div class="history-container__history-subtitle">
+          <h3>高校生</h3>
         </div>
-        <div class="history-container__history-list--text">
-          <div class="history-container__history-list--text-item">
-            <h4>頑張ったこと</h4>
-            <p>バスケットボール</p>
-          </div>
-          <div class="history-container__history-list--text-item">
-            <h4>実績</h4>
+        <div class="history-container__history-list">
+          <div class="history-container__history-list--status">
             <dl>
-              <dt>2011年</dt>
-              <dd>インターハイ兵庫県予選３位</dd>
-              <dd>ウインターカップ兵庫県予選３位</dd>
-              <dt>2012年</dt>
-              <dd>インターハイ兵庫県予選１位</dd>
-              <dd>ウインターカップ兵庫県予選２位</dd>
-              <dt>2013年</dt>
-              <dd>インターハイ兵庫県予選優勝</dd>
-              <dd>ウインターカップ兵庫県予選優勝</dd>
+              <dt>年代</dt>
+              <dd>2011年4月 (H.23)：入学</dd>
+              <dd>2014年3月 (H.26)：卒業</dd>
+              <dt>年齢</dt>
+              <dd>15~18歳</dd>
+              <dt>学校</dt>
+              <dd>育英高等学校</dd>
+              <dt>特筆</dt>
+              <dd>兵庫県予選・夏冬制覇</dd>
             </dl>
           </div>
-        </div>
-        <div class="history-container__history-list--image">
-          <img src="images/history_images/history_2.jpeg" alt="">
-        </div>
-      </div>
-      <div class="history-container__history-subtitle">
-        <h3>大学生</h3>
-      </div>
-      <div class="history-container__history-list">
-        <div class="history-container__history-list--status last-hls">
-          <dl>
-            <dt>年代</dt>
-            <dd>2014年4月 (H.26)：入学</dd>
-            <dd>2018年3月 (H.30)：卒業</dd>
-            <dt>年齢</dt>
-            <dd>18~22歳</dd>
-            <dt>学校</dt>
-            <dd>立命館大学</dd>
-            <dt>特筆</dt>
-            <dd>デザインや物作りに心酔</dd>
-          </dl>
-        </div>
-        <div class="history-container__history-list--text last-hlt">
-          <div class="history-container__history-list--text-item">
-            <h4>頑張ったこと</h4>
-            <p>学生団体</p>
-            <p>バスケットボール</p>
-            <p>アルバイト</p>
+          <div class="history-container__history-list--text">
+            <div class="history-container__history-list--text-item">
+              <h4>頑張ったこと</h4>
+              <p>バスケットボール</p>
+            </div>
+            <div class="history-container__history-list--text-item">
+              <h4>実績</h4>
+              <dl>
+                <dt>2011年</dt>
+                <dd>インターハイ兵庫県予選３位</dd>
+                <dd>ウインターカップ兵庫県予選３位</dd>
+                <dt>2012年</dt>
+                <dd>インターハイ兵庫県予選１位</dd>
+                <dd>ウインターカップ兵庫県予選２位</dd>
+                <dt>2013年</dt>
+                <dd>インターハイ兵庫県予選優勝</dd>
+                <dd>ウインターカップ兵庫県予選優勝</dd>
+              </dl>
+            </div>
           </div>
-          <div class="history-container__history-list--text-item">
-            <h4>実績</h4>
+          <div class="history-container__history-list--image">
+            <img src="images/history_images/history_2.jpeg">
+          </div>
+        </div>
+      </div>
+      <div id="fade-university" class="fade">
+        <div class="history-container__history-subtitle">
+          <h3>大学生</h3>
+        </div>
+        <div id="fade-university" class="history-container__history-list">
+          <div class="history-container__history-list--status last-hls">
             <dl>
-              <dt>2015年</dt>
-              <dd>学生団体で１年間活動</dd>
-              <dt>2017年</dt>
-              <dd>アルバイトリーダーとして社長賞受賞</dd>
-              <dd>期間限定の新商品開発</dd>
-              <dd>社会人バスケットボール<br>
-                上位リーグへ昇格</dd>
+              <dt>年代</dt>
+              <dd>2014年4月 (H.26)：入学</dd>
+              <dd>2018年3月 (H.30)：卒業</dd>
+              <dt>年齢</dt>
+              <dd>18~22歳</dd>
+              <dt>学校</dt>
+              <dd>立命館大学</dd>
+              <dt>特筆</dt>
+              <dd>デザインや物作りに心酔</dd>
             </dl>
           </div>
-        </div>
-        <div class="history-container__history-list--image">
-          <img src="images/history_images/history_3.jpeg" alt="">
+          <div class="history-container__history-list--text last-hlt">
+            <div class="history-container__history-list--text-item">
+              <h4>頑張ったこと</h4>
+              <p>学生団体</p>
+              <p>バスケットボール</p>
+              <p>アルバイト</p>
+            </div>
+            <div class="history-container__history-list--text-item">
+              <h4>実績</h4>
+              <dl>
+                <dt>2015年</dt>
+                <dd>学生団体で１年間活動</dd>
+                <dt>2017年</dt>
+                <dd>アルバイトリーダーとして社長賞受賞</dd>
+                <dd>期間限定の新商品開発</dd>
+                <dd>社会人バスケットボール<br>
+                  上位リーグへ昇格</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="history-container__history-list--image">
+            <img src="images/history_images/history_3.jpeg">
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Programing  設定 -->
-    <div class="programing">
+    <div id="Programing" class="programing fade">
       <div class="title">
         <h2>Programing学習</h2>
       </div>
@@ -233,30 +260,26 @@
           <div class="programing-container__programing-text--purpose">
             <h4>目的</h4>
             <p>
-              「ヒト・モノ・クラシ」を創造する。<br><br>
-              最初の動機は、伝統的なモノづくりを残していきたいとの思いからです。<br>
-              ただ単に全てを残すことは難しく、時代と共に、そこに暮らす人々の環境に順応する事が求められると考えています。<br>
-              どの様にして残すのか、その手段としてプログラミングを選択しました。<br>
+              「ヒト・モノ・クラシ」を創造する。<br>
+              最初の動機は、伝統的なモノづくりを残していきたいとの思いからです。　ただ単に全てを残すことは難しく、時代と共に、そこに暮らす人々の環境に順応する事が求められると考えています。　どの様にして残すのか、その手段としてプログラミングを選択しました。<br>
               現在はプログラミングでの社会貢献を通して、暮らしとテクノロジーの繋がりを学び、
               人々の『クラシ』を創造していきたいと考えています。
             </p>
           </div>
           <div class="programing-container__programing-text--target">
             <h4>短期目標</h4>
-            <p>フロントエンジニアとして、Webアプリケーションを作成できるまでになることが短期目標です。<br>
-              自分の手で試行錯誤し、作成していくことが何より自分の暮らしを充実させてくれます。<br>
-              現状の学習も楽しみつつ、技術向上には日々精進していきます。</p>
+            <p>フロントエンジニアとして、Webアプリケーションのチーム開発の戦力となることが短期目標です。まずは現場での経験を積み、技術者のスピード感、知識を体系的に身につけていきたいと考えています。そして将来的には価値を創造したり、チームをマネジメントしていくような人材になることが長期目標です。</p>
           </div>
         </div>
         <div class="programing-container__programing-images">
-          <img src="images/programing_images/purpose_1.jpeg" alt="">
-          <img src="images/programing_images/target_1.jpeg" alt="">
+          <img src="images/programing_images/purpose_1.jpeg">
+          <img src="images/programing_images/target_1.jpeg">
         </div>
       </div>
     </div>
 
     <!-- Product  設定 -->
-    <div class="product">
+    <div id="Product" class="product fade">
       <div class="title">
         <h2>Product</h2>
       </div>
@@ -313,11 +336,11 @@
     </div>
 
     <!-- Contact  設定 -->
-    <div class="contact">
+    <div id="Contact" class="contact fade">
       <div class="title">
         <h2>Contact</h2>
       </div>
-      <form  name="contact" method="POST" data-netlify="true">
+      <form  name="contact " method="POST" data-netlify="true">
         <ul>
           <li>
             <input type="text" class="contact-style contact-split contact-left"  name="name" placeholder="Name :" />
@@ -347,6 +370,8 @@
     <h2>I.Wakita Profile</h2>
     <p>©︎I.W Design.</p>
   </footer>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
