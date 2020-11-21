@@ -171,15 +171,6 @@ textarea {
   }
 }
 
-.drop-up {
-  display: none;
-  transition: 1s;
-}
-.dro-down {
-  display: block;
-  transition: 1s;
-}
-
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     wrapper  設定
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
@@ -200,8 +191,6 @@ textarea {
 
 .title {
   width: 94%;
-  display: flex;
-  align-content: center;
   @include paddingPercent(1000, 20, 0, 20, 30);
   margin: 0 auto 5em;
   color: $light-color;
@@ -214,18 +203,7 @@ textarea {
     width: 90%;
     @include paddingPercent(768, 20, 0, 20, 0);
   }
-
-  .drop-btn {
-    display: flex;
-    align-items: center;
-    font-size: 2.5em;
-    border: 2px solid $light-color;
-    border-radius: 50%;
-    padding: 3px 6px;
-    margin-right: 20px;
-  }
 }
-
 
 .fade {
   opacity: 0;
@@ -236,9 +214,9 @@ textarea {
   transition: 3s;
 }
 
-/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //     header  設定
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 header {
   width: 100%;
@@ -265,19 +243,47 @@ h1 {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 nav {
   margin: 0 0 5rem;
+  @include marginPercent(1000, 0, 0, 50, 0);
+
+  @include mq(tab) {
+    @include marginPercent(768, 0, 0, 50, 0);
+  }
+
+  @include mq() {
+    @include marginPercent(425, 0, 0, 50, 0);
+  }
 
   ul {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     text-align: center;
+
+    @include mq() {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
-  a {
+  li {
     border-radius: 10px;
     background: $deep-color;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+    margin: 20px;
     padding: 10px 15px;
     box-shadow: $light-shadow;
+
+    @include mq(tab) {
+      font-size: 2rem;
+      padding: 7px 12px;
+    }
+
+    @include mq() {
+      font-size: 1.6rem;
+      width: 50%;
+      padding: 7px 12px;
+    }
+
   }
 }
 
@@ -297,6 +303,17 @@ nav {
     position: fixed;
     right: 20px;
     bottom: 100px;
+    z-index: 10;
+
+    @include mq(tab) {
+      font-size: 2.8rem;
+      padding: 6px 12px;
+    }
+
+    @include mq() {
+      font-size: 2.2rem;
+      padding: 4px 8px;
+    }
   }
 }
 

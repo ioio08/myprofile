@@ -14,7 +14,7 @@
   window.addEventListener("scroll", () => {
     const nav = document.getElementById("Navigation");
     const profile = document.getElementById("Profile");
-    const history = document.getElementById("History");
+    const fadeJuniorHighSchool = document.getElementById("fade-junior-high-school");
     const fadeHighSchool = document.getElementById("fade-highschool");
     const fadeUniversity = document.getElementById("fade-university");
     const programing = document.getElementById("Programing");
@@ -26,16 +26,16 @@
       nav.classList.add('fade-in');
       profile.classList.add('fade-in');
     } else if (scrollTop > 680 && scrollTop <= 1499 ) {
-      history.classList.add('fade-in');
+      fadeJuniorHighSchool.classList.add('fade-in');
     } else if (scrollTop > 1500 && scrollTop <= 2099 ) {
       fadeHighSchool.classList.add('fade-in');
     } else if (scrollTop > 2100 && scrollTop <= 2599 ) {
       fadeUniversity.classList.add('fade-in');
-    } else if (scrollTop > 2600 && scrollTop <= 4399 ) {
+    } else if (scrollTop > 2600 && scrollTop <= 3799 ) {
       programing.classList.add('fade-in');
-    } else if (scrollTop > 4400 && scrollTop <= 5399 ) {
+    } else if (scrollTop > 3800 && scrollTop <= 5299 ) {
       product.classList.add('fade-in');
-    } else if (scrollTop > 5400 ) {
+    } else if (scrollTop > 5300 ) {
       contact.classList.add('fade-in');
     }
   });
