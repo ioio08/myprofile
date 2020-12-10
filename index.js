@@ -21,7 +21,6 @@
     const product = document.getElementById("Product");
     const contact = document.getElementById("Contact");
     const scrollTop = document.scrollingElement.scrollTop;
-    console.log(scrollTop);
     if (scrollTop >= 0 && scrollTop <= 679 ) {
       nav.classList.add('fade-in');
       profile.classList.add('fade-in');
