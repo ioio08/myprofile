@@ -708,21 +708,6 @@ nav {
     }
   }
 
-  &__programing-images {
-    display: flex;
-    justify-content: center;
-
-    img {
-      max-width: 35em;
-      width: 40%;
-      height: auto;
-
-      /* Programing 添付の写真１枚目に対して、margin-right */
-      &:first-child {
-        @include marginPercent(950, 0, 50, 0, 0);
-      }
-    }
-  }
 }
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -781,29 +766,34 @@ nav {
       }
     }
 
-    p {
-      @include paddingPercent(800, 10, 0, 0, 0);
+    h3 {
+      @include marginPercent(800, 40, 0, 0, 0);
       text-align: end;
+
+      @include mq(pc) {
+        @include paddingPercent(400, 10, 0, 0, 0);
+        font-size: 2rem;
+      }
 
       @include mq(tab) {
         @include paddingPercent(730, 10, 0, 0, 0);
+        font-size: 1.5rem;
       }
 
       @include mq() {
         @include paddingPercent(400, 10, 0, 0, 0);
-      }
-
-      &::before {
-        content: "“ ";
-      }
-
-      &::after {
-        content: " “";
+        font-size: 1.2rem;
       }
 
       a {
         color: $light-color;
         background-color: $deep-color;
+        border-radius: 20px;
+        @include paddingPercent(800, 20, 25, 20, 25);
+
+        @include mq(pc) {
+          @include paddingPercent(800, 15, 25, 15, 25);
+        }
 
         &:hover {
           color: $deep-color;
@@ -836,13 +826,21 @@ nav {
         @include marginPercent(330, 0, 0, 20, 0);
 
         @include mq(pc) {
-          margin-bottom: 4em;
           @include marginPercent(860, 0, 0, 40, 0);
+        }
+
+        dt {
+          @include marginPercent(500, 0, 30, 0, 0);
+          line-height: 2em;
+
+          @include mq(pc) {
+          @include marginPercent(800, 0, 20, 0, 0);
+        }
         }
 
         dd {
           width: 70%;
-          line-height: 1.3em;
+          line-height: 2em;
 
           @include mq(pc) {
             width: 80%;
@@ -861,7 +859,7 @@ nav {
 
       li {
         max-width: 33em;
-        width: 48%;
+        width: 70%;
         @include mq(tab) {
           width: 100%;
         }
@@ -873,22 +871,22 @@ nav {
         dl {
           dt {
             width: 55%;
+            @include marginPercent(330, 0, 0, 0, 12);
           }
 
           dd {
             width: 45%;
+            @include marginPercent(100, 0, 0, 10, 10);
 
             &.flex-item {
               @include marginPercent(100, 0, 0, 13, 13);
             }
 
-            &:last-child {
-              @include marginPercent(100, 0, 0, 0, 0);
-            }
-
             @include mq(pc) {
               line-height: 1em;
               width: auto;
+              @include marginPercent(100, 0, 0, 15, 15);
+
             }
           }
         }
@@ -1045,8 +1043,8 @@ nav {
     display: block;
     width: 15%;
     cursor: pointer;
-    color: $deep-color;
-    background-color: $light-color;
+    color: white;
+    background-color: $deep-color;
     text-decoration: none;
     @include paddingPercent(700, 15, 18, 15, 18);
     @include marginPercent(700, 0, 40, 0, 0);
@@ -1059,6 +1057,14 @@ nav {
     @include mq() {
       width: 30%;
       @include paddingPercent(240, 10, 15, 10, 15);
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &:focus {
+      outline: 0
     }
   }
 
